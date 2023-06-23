@@ -8,7 +8,7 @@ function About() {
             <div className="bidix_decr">
               <h2>
                 kaga qayb qaado fursadaha sadaqada &
-                <span> Wax bixinta Hab casriyaysan.</span>
+                <span> Wax bixinta Hab casriyaysan .</span>
               </h2>
               <p>
                 Ixsaanka waa goob aad ku bixin karto deeqdada maalin ee aad
