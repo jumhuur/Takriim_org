@@ -852,8 +852,8 @@ div.Projects {
           font-weight: bold;
           border-radius: 7px;
           span {
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             background-color: $main-color2;
             border-radius: 50%;
             position: absolute;
@@ -1797,7 +1797,7 @@ div.laba_qaybood {
         width: 80%;
         height: 15px;
         background-color: $prog_color;
-        margin: 10px 0px;
+        margin: 15px 0px;
         border-radius: 7px;
         overflow: hidden;
 
@@ -1812,12 +1812,15 @@ div.laba_qaybood {
           border-radius: 7px;
 
           span {
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             background-color: $main-color2;
             border-radius: 50%;
             position: absolute;
             border: solid 2px $bg-main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         }
       }
