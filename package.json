@@ -22,6 +22,7 @@
     "react-dom": "^18.2.0",
     "redux": "^4.2.1",
     "sass": "^1.63.4",
+    "swr": "^2.2.0",
     "timeago.js": "^4.0.0-beta.3",
     "video-react": "^0.16.0"
   }

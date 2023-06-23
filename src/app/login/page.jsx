@@ -11,8 +11,8 @@ function Login() {
   const sesstion = useSession();
   const router = useRouter();
   const [Loading, setloading] = useState(false);
-  if (sesstion.status === "authenticated" || sesstion.status === "loading") {
-    router.push("/");
+  if (sesstion.status === "authenticated") {
+    router?.push("/");
   }
   const [login, setLogin] = useState(true);
   const [inputes, setinputes] = useState({

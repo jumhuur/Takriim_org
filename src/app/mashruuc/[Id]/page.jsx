@@ -3,6 +3,7 @@ import Topinfo from "@/components/Topinfo";
 import Provider from "@/components/Provide";
 import FromRaber from "@/components/FormRaber";
 import LastTabaruc from "@/components/lastTabaruc";
+import useSWR from "swr";
 async function getData(Id) {
   const res = await fetch(`http://localhost:3000/api/projects/${Id}`, {
     next: { revalidate: 10 },
@@ -17,7 +18,7 @@ async function getData(Id) {
 
 async function GetTotal(Id) {
   const res = await fetch(`http://localhost:3000/api/Tabaruc/getTotal/${Id}`, {
-    cache: "no-store",
+    next: { revalidate: 10 },
   });
 
   return res.json();
@@ -33,6 +34,12 @@ export async function generateMetadata({ params }) {
 
 async function MainPage({ params }) {
   const { Id } = params;
+  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  // const { data, error, isLoading } = useSWR(
+  //   `http://localhost:3000/api/projects/${Id}`,
+  //   fetcher
+  // );
+
   const info = await getData(Id);
   const lastTotal = await GetTotal(Id);
   const Total = lastTotal.length > 0 ? lastTotal[0].Total : 0;

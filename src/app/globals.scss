@@ -1427,6 +1427,7 @@ div.over_alert {
       button {
         @include btn-web(15%);
         height: 35px;
+        margin: 10px 0px;
         a {
           @extend %reset-link;
           @include flex-box(column);
@@ -1444,7 +1445,7 @@ div.over_alert {
         width: 100%;
         @include dynamic-flex(center, center, row, 0px);
         &.Qalad {
-          width: 55px;
+          width: 35px;
           i {
             color: $colose_color;
             font-size: 28px;
