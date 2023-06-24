@@ -8,6 +8,7 @@ function Nav() {
   const sesstion = useSession();
   // states
   const [Activemobile, setActivemobile] = useState(false);
+  const [Classn, setClassn] = useState(false);
   const [login, setLogin] = useState(false);
   // functions
   const activeMobile = () => {
@@ -23,20 +24,39 @@ function Nav() {
   //   Id: "6454dba1429d70970c9c0eff",
   //   Lanbar: "4645195",
   // };
+
+  document.onscroll = function () {
+    console.log(scrollY);
+    if (scrollY > 50) {
+      setClassn(true);
+    } else {
+      setClassn(false);
+    }
+  };
   return (
     <>
-      <div className="nav">
+      <div className={Classn ? "nav hoos" : "nav"}>
         <div className="haye">
           <div className="links">
             <div className="logo">
               <Link href="/">
-                <Image
-                  src="/Images/Logo.png"
-                  width={20}
-                  height={20}
-                  alt="Logo"
-                />
-                <p>Takriim</p>
+                {Classn ? (
+                  <Image
+                    src="/Images/Logo_Cadaan.png"
+                    width={20}
+                    height={20}
+                    alt="Logo"
+                  />
+                ) : (
+                  <Image
+                    src="/Images/Logo.png"
+                    width={20}
+                    height={20}
+                    alt="Logo"
+                  />
+                )}
+
+                <p className={Classn && "hoos_ac"}>Takriim</p>
               </Link>
             </div>
             <div className="link-items computer">
