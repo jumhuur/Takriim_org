@@ -56,7 +56,7 @@ function Nav() {
                   />
                 )}
 
-                <p className={Classn && "hoos_ac"}>Takriim</p>
+                <p className={"hoos_ac"}>Takriim</p>
               </Link>
             </div>
             <div className="link-items computer">

@@ -655,7 +655,7 @@ div.slide {
 div.ayad {
   width: 100%;
   height: 125px;
-  @include linearGradient();
+  background-color: $main-color2;
   @include dynamic-flex(center, center, column, 0px);
   user-select: none;
   &.in_info {
