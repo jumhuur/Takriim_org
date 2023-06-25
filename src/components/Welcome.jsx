@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Lottie from "lottie-react";
-import animationData from "../../public/images/70897-online-payments.json";
+// import animationData from "../../public/images/70897-online-payments.json";
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
 function Welcome() {

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 function Register() {
@@ -10,9 +11,38 @@ function Register() {
     Admin: false,
     Password: "",
   });
+  const [Looding, setLooding] = useState(false);
+  const [Error, setError] = useState(false);
+  const route = useRouter();
 
-  const Looding = false;
-  const Error = false;
+  const Resgister = async (e) => {
+    e.preventDefault();
+    try {
+      setLooding(true);
+      const res = await fetch("http://localhost:3000/api/auth/register", {
+        method: "POST",
+        body: JSON.stringify(inputes),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.ok) {
+        setLooding(false);
+        route.push("/");
+      }
+      if (!res.ok) {
+        setLooding(false);
+        setError(res.statusText);
+      }
+      return res;
+    } catch (Err) {
+      setError(false);
+    }
+  };
+
+  // const Looding = false;
+  // const Error = false;
 
   const onchange_inputes = (e) => {
     setinputes((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -45,7 +75,7 @@ function Register() {
                     <i className="fa-solid fa-xmark"></i>
                   </Link>
                 </div>
-                <form className="from">
+                <form className="from" onSubmit={Resgister}>
                   <div className="dhinac_l Maclumo_login">
                     <h2>Samayso Akoon</h2>
                     <p>Ku samayso akoon daqiiqad Gudaheed.</p>

@@ -26,7 +26,6 @@ function Nav() {
   // };
 
   document.onscroll = function () {
-    console.log(scrollY);
     if (scrollY > 50) {
       setClassn(true);
     } else {
