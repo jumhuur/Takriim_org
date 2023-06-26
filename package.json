@@ -13,6 +13,7 @@
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
     "evc-api": "^1.2.1",
+    "jsonwebtoken": "^9.0.0",
     "lottie-react": "^2.4.0",
     "mongoose": "6.11.2",
     "next": "13.4.5",

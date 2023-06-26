@@ -3,8 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Auth } from "@/context/context";
+import { Joan } from "next/font/google";
 
 function Register() {
+  const { User } = Auth();
+  const route = useRouter();
+  // const User = localStorage.getItem("User");
+  if (User) {
+    route.push("/");
+  }
   const [inputes, setinputes] = useState({
     Magac: "",
     Lanbar: "",
@@ -13,7 +21,6 @@ function Register() {
   });
   const [Looding, setLooding] = useState(false);
   const [Error, setError] = useState(false);
-  const route = useRouter();
 
   const Resgister = async (e) => {
     e.preventDefault();
@@ -27,8 +34,11 @@ function Register() {
         },
       });
 
+      const data = await res.json();
+
       if (res.ok) {
         setLooding(false);
+        localStorage.setItem("User", JSON.stringify(data));
         route.push("/");
       }
       if (!res.ok) {

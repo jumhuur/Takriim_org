@@ -1,18 +1,17 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
+import { getSession, signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "../../../public/Images/130776-create-account";
-
 function Login() {
-  const sesstion = useSession();
+  const { data: sesstion } = useSession();
   const router = useRouter();
   const [Loading, setloading] = useState(false);
-  if (sesstion.status === "authenticated") {
-    router?.push("/");
+  if (sesstion?.user) {
+    router.push("/");
   }
   const [login, setLogin] = useState(true);
   const [inputes, setinputes] = useState({
@@ -144,3 +143,20 @@ function Login() {
 }
 
 export default Login;
+
+// export async function getServerSideProps(req) {
+//   const sesstion = await getSession({ req });
+
+//   if (sesstion) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     };
+//   }
+
+//   return {
+//     props: { sesstion },
+//   };
+// }

@@ -2,7 +2,12 @@ import { NextResponse } from "next/server";
 import conectdb from "@/utils/db";
 import { isticmaale } from "@/models/Users";
 import bcrypt from "bcryptjs";
+import Jwt from "jsonwebtoken";
 export const POST = async (request) => {
+  const CreateToken = (_id) => {
+    return Jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
+  };
+
   const { Magac, Lanbar, Password } = await request.json();
   await conectdb();
   const Hashedpassword = await bcrypt.hash(Password, 10);
@@ -21,7 +26,14 @@ export const POST = async (request) => {
       throw Error("Lanbarku Ha Noqdo 7 Lanbar Kaliya");
     }
     await User.save();
-    return new NextResponse("User Created", { status: 200 });
+    const Token = CreateToken(User._id);
+    //console.log(Token);
+    return new NextResponse(
+      JSON.stringify({ Magac: User.Magac, Lanbar: User.Lanbar, Id: User._id }),
+      {
+        status: 200,
+      }
+    );
   } catch (Err) {
     return new NextResponse(Err.message, {
       status: 400,

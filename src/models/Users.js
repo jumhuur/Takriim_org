@@ -9,7 +9,7 @@ const NextUser = new Schema(
     Lanbar: {
       type: String,
       required: true,
-      unique: true,
+      unique: [true, "lanbarkan Waa la diwaan galiyay"],
     },
     Password: {
       type: String,
