@@ -38,7 +38,7 @@ function Register() {
 
       if (res.ok) {
         setLooding(false);
-        localStorage.setItem("User", JSON.stringify(data));
+        // localStorage.setItem("User", JSON.stringify(data));
         route.push("/");
       }
       if (!res.ok) {

@@ -6,7 +6,8 @@ import LastTabaruc from "@/components/lastTabaruc";
 import useSWR from "swr";
 async function getData(Id) {
   const res = await fetch(`http://localhost:3000/api/projects/${Id}`, {
-    next: { revalidate: 10 },
+    // next: { revalidate: 10 },
+    cache: "no-store",
   });
 
   if (!res.ok) {
@@ -18,7 +19,8 @@ async function getData(Id) {
 
 async function GetTotal(Id) {
   const res = await fetch(`http://localhost:3000/api/Tabaruc/getTotal/${Id}`, {
-    next: { revalidate: 10 },
+    // next: { revalidate: 10 },
+    cache: "no-store",
   });
 
   return res.json();
