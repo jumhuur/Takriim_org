@@ -26,7 +26,7 @@ function Nav() {
   //   Lanbar: "4645195",
   // };
 
-  onscroll = function () {
+  window.onscroll = function () {
     if (scrollY > 50) {
       setClassn(true);
     } else {
