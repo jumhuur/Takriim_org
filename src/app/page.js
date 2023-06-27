@@ -4,7 +4,7 @@ import Fqa from "@/components/Faq";
 import Projects from "@/components/Peojects";
 import TiroKoobyo from "@/components/TiroKoobyo";
 import Welcome from "@/components/Welcome";
-import Marketing from "@/components/marketing";
+import Marketing from "@/components/Marketing";
 export default function Home() {
   return (
     <main>

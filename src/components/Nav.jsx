@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import MobileNav from "./NavMobile";
 import { useSession } from "next-auth/react";
+// import { NextNProgress } from "nextjs-progressbar";
 function Nav() {
   const sesstion = useSession();
   // states
@@ -36,6 +37,7 @@ function Nav() {
     <>
       <div className={Classn ? "nav hoos" : "nav"}>
         <div className="haye">
+          {/* <NextNProgress color="#fff" /> */}
           <div className="links">
             <div className="logo">
               <Link href="/">
