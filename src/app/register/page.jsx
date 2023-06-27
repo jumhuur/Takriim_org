@@ -4,12 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Auth } from "@/context/context";
-import { Joan } from "next/font/google";
 
 function Register() {
   const { User } = Auth();
   const route = useRouter();
-  // const User = localStorage.getItem("User");
   if (User) {
     route.push("/");
   }
@@ -22,34 +20,31 @@ function Register() {
   const [Looding, setLooding] = useState(false);
   const [Error, setError] = useState(false);
 
-  const Resgister = async (e) => {
-    e.preventDefault();
-    try {
-      setLooding(true);
-      const res = await fetch("http://localhost:3000/api/auth/register", {
-        method: "POST",
-        body: JSON.stringify(inputes),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+  // const Resgister = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     setLooding(true);
+  //     const res = await fetch("http://localhost:3000/api/auth/register", {
+  //       method: "POST",
+  //       body: JSON.stringify(inputes),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
 
-      const data = await res.json();
-
-      if (res.ok) {
-        setLooding(false);
-        // localStorage.setItem("User", JSON.stringify(data));
-        route.push("/");
-      }
-      if (!res.ok) {
-        setLooding(false);
-        setError(res.statusText);
-      }
-      return res;
-    } catch (Err) {
-      setError(false);
-    }
-  };
+  //     if (res.ok) {
+  //       setLooding(false);
+  //       route.push("/");
+  //     }
+  //     if (!res.ok) {
+  //       setLooding(false);
+  //       setError(res.statusText);
+  //     }
+  //     return res;
+  //   } catch (Err) {
+  //     setError(false);
+  //   }
+  // };
 
   // const Looding = false;
   // const Error = false;
@@ -85,7 +80,7 @@ function Register() {
                     <i className="fa-solid fa-xmark"></i>
                   </Link>
                 </div>
-                <form className="from" onSubmit={Resgister}>
+                <form className="from">
                   <div className="dhinac_l Maclumo_login">
                     <h2>Samayso Akoon</h2>
                     <p>Ku samayso akoon daqiiqad Gudaheed.</p>

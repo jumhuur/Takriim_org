@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Lottie from "lottie-react";
-import animationData from "../../../public/Images/130776-create-account";
+import animationData from "../../../public/Images/130776-create-account.json";
 function Login() {
   const { data: sesstion } = useSession();
   const router = useRouter();
@@ -143,20 +143,3 @@ function Login() {
 }
 
 export default Login;
-
-// export async function getServerSideProps(req) {
-//   const sesstion = await getSession({ req });
-
-//   if (sesstion) {
-//     return {
-//       redirect: {
-//         destination: "/",
-//         permanent: false,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: { sesstion },
-//   };
-// }
