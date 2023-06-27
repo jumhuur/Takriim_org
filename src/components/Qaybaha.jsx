@@ -1,12 +1,6 @@
 "use client";
-
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 function Qayabaha() {
-  const searchParams = useSearchParams();
-  const search = searchParams.get("Qayb");
-  console.log("qaybaha", search);
-  // console.log("waybha", params);
   return (
     <div className="qaybha">
       <div className="qayb">

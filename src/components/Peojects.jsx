@@ -1,7 +1,7 @@
 import Caafimaad from "./Caafimaad";
 import Qayabaha from "./Qaybaha";
 
-function Projects({ children }) {
+function Projects() {
   return (
     <>
       <div className="Projects">

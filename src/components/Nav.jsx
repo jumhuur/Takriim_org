@@ -40,7 +40,6 @@ function Nav() {
     <>
       <div className={Classn ? "nav hoos" : "nav"}>
         <div className="haye">
-          {/* <NextNProgress color="#fff" /> */}
           <div className="links">
             <div className="logo">
               <Link href="/">
