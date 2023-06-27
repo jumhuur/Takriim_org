@@ -46,8 +46,6 @@ const FromRaber = ({ info, Id, Total }) => {
   const OnChangeInputes = (e) => {
     setfildes((perv) => ({ ...perv, [e.target.name]: e.target.value }));
     setfildesTabaruc((perv) => ({ ...perv, [e.target.name]: e.target.value }));
-    console.log(fildes);
-    console.log(fildesTabaruc);
   };
 
   const UpdateAction = async () => {
@@ -109,17 +107,17 @@ const FromRaber = ({ info, Id, Total }) => {
               // tani sax maaha
               console.log(data.responseMsg);
               //Qaybta saxda ayaa leh  Lakiin tijaabo ahaan ayaan halkan ugu qoray
-              AddTabaruc();
-              setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
-              setimg(animationData);
-              setcln("Sax");
-              setwait(0);
-              //Qaybta qaladka ah
-              // setmsg("ApiKey Is Not Active");
-              // setimg(animationData2);
-              // setcln("Qalad");
+              // AddTabaruc();
+              // setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
+              // setimg(animationData);
+              // setcln("Sax");
               // setwait(0);
-              // setLooding(false);
+              //Qaybta qaladka ah
+              setmsg("USER_API_IS_NOT_ACTIVE");
+              setimg(animationData2);
+              setcln("Qalad");
+              setwait(0);
+              setLooding(false);
             } else {
               AddTabaruc();
               setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
