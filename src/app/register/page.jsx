@@ -140,7 +140,7 @@ function Register() {
                     )}
 
                     <p className="Bilaa_akoon">
-                      Akoon Ma leedahay? <Link href="/login">Gal Akoon</Link>
+                      Akoon Ma leedahay? <Link href={"/login"}>Gal Akoon</Link>
                     </p>
                     {Error ? (
                       <p className="Error">

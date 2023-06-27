@@ -13,6 +13,7 @@ function Login() {
   if (sesstion?.user) {
     router.push("/");
   }
+
   const [login, setLogin] = useState(true);
   const [inputes, setinputes] = useState({
     Lanbar: "",
@@ -121,7 +122,7 @@ function Login() {
                     )}
 
                     <p className="Bilaa_akoon">
-                      Akoon Ma lihid? <Link href="/register">Samayso</Link>
+                      Akoon Ma lihid? <Link href={"/register"}>Samayso</Link>
                     </p>
                     {Error ? (
                       <p className="Error">
