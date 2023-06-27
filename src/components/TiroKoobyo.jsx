@@ -67,7 +67,7 @@ async function TiroKoobyo() {
                 <span className="Tirokoob_titels">$ Dollar</span>
               </h2>
               <p>
-                Tabruca sanadlaha ah ee ee shabakada ixsaan waxa uu gaadhay
+                Tabruca sanadlaha ah ee ee shabakada Takriim waxa uu gaadhay
                 halkii ugu saraysay sanakada 2023.
               </p>
             </div>
@@ -101,7 +101,7 @@ async function TiroKoobyo() {
                 <span className="Tirokoob_titels">Deeq Bixiye</span>
               </h2>
               <p>
-                Tirada guud ee dadka Tabarucyadooda ku bixiyay shabakada ixsaan
+                Tirada guud ee dadka Tabarucyadooda ku bixiyay shabakada Takriim
                 intii ay shaqaynaysay
               </p>
             </div>
@@ -139,7 +139,7 @@ async function TiroKoobyo() {
                 <span className="Tirokoob_titels">Isticmaale</span>
               </h2>
               <p>
-                isticmaalayaasha shabakada ixsaan si rasmiya akoon ugu leh wax
+                isticmaalayaasha shabakada Takriim si rasmiya akoon ugu leh wax
                 ku dhawyahay 8 kun qof sanadkan 2023.
               </p>
             </div>

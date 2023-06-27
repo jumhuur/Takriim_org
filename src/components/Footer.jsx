@@ -14,7 +14,7 @@ function Footer() {
                 src="/Images/Logo_Cadaan.png"
                 alt="Logo"
               />
-              <p>Ixsaan</p>
+              <p>Takriim</p>
             </Link>
           </div>
           <div className="q_footer">
