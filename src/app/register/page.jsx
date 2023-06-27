@@ -3,12 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Auth } from "@/context/context";
+import { useSession } from "next-auth/react";
 
 function Register() {
-  const { User } = Auth();
   const route = useRouter();
-  if (User) {
+  const { data: sesstion } = useSession();
+  if (sesstion?.user) {
     route.push("/");
   }
   const [inputes, setinputes] = useState({
