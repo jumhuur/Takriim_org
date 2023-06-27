@@ -6,11 +6,6 @@ import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
 function Welcome() {
   const sesstion = useSession();
-  const CrentUser = {
-    Magac: "maxamad",
-    Id: "6454dba1429d70970c9c0eff",
-    Lanbar: "4645195",
-  };
   const Logout = () => {
     signOut("google");
   };
