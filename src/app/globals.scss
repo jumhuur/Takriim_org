@@ -628,13 +628,13 @@ div.slide {
 
   .carousel-next {
     &:before {
-      background-image: url("../../public/images/arrow-right-solid.svg");
+      background-image: url("/Images/arrow-right-solid.svg");
     }
   }
 
   .carousel-prev {
     &:before {
-      background-image: url("../../public/images/arrow-left-solid.svg");
+      background-image: url("/Images/arrow-left-solid.svg");
     }
   }
 
@@ -1039,7 +1039,7 @@ div.Counts {
     top: 0;
     overflow: hidden;
     //background-color: #002d97;
-    background-image: url("../../public/images/wave_02.svg");
+    background-image: url("/Images/wave_02.svg");
     background-size: cover;
   }
   div.war_laba_qaybood {
