@@ -5,7 +5,7 @@ import ProjectSkl from "./Skeletons/ProjectSkeleton";
 import Image from "next/image";
 import Link from "next/link";
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/projects/getall", {
+  const res = await fetch("http://127.0.0.1:3000/api/projects/getall", {
     cache: "reload",
   });
 

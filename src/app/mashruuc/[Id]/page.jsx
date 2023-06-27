@@ -5,7 +5,7 @@ import FromRaber from "@/components/FormRaber";
 import LastTabaruc from "@/components/lastTabaruc";
 import useSWR from "swr";
 async function getData(Id) {
-  const res = await fetch(`http://localhost:3000/api/projects/${Id}`, {
+  const res = await fetch(`http://127.0.0.1:3000/api/projects/${Id}`, {
     // next: { revalidate: 10 },
     cache: "no-store",
   });
@@ -18,7 +18,7 @@ async function getData(Id) {
 }
 
 async function GetTotal(Id) {
-  const res = await fetch(`http://localhost:3000/api/Tabaruc/getTotal/${Id}`, {
+  const res = await fetch(`http://127.0.0.1:3000/api/Tabaruc/getTotal/${Id}`, {
     // next: { revalidate: 10 },
     cache: "no-store",
   });

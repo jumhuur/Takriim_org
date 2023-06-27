@@ -1407,7 +1407,10 @@ div.over_alert {
   height: 195px;
   background-color: $bg-main;
   // backdrop-filter: blur(12px);
-  @include Shadaw_buttom();
+  // @include Shadaw_buttom();
+  -webkit-backdrop-filter: blur(12px);
+  -moz-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   visibility: hidden;
   &.active {
     visibility: visible;
