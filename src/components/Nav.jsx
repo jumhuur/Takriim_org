@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MobileNav from "./NavMobile";
 import { useSession } from "next-auth/react";
 // import { NextNProgress } from "nextjs-progressbar";
@@ -26,13 +26,16 @@ function Nav() {
   //   Lanbar: "4645195",
   // };
 
-  window.onscroll = function () {
-    if (scrollY > 50) {
-      setClassn(true);
-    } else {
-      setClassn(false);
-    }
-  };
+  useEffect(() => {
+    onscroll = function () {
+      if (scrollY > 50) {
+        setClassn(true);
+      } else {
+        setClassn(false);
+      }
+    };
+  });
+
   return (
     <>
       <div className={Classn ? "nav hoos" : "nav"}>
