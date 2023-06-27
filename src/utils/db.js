@@ -3,9 +3,7 @@ mongoose.set("strictQuery", false);
 const conectdb = async () => {
   mongoose.set("strictQuery", true);
   try {
-    await mongoose.connect(
-      "mongodb+srv://jumhuur:jumhuur0404@cluster0.uctjw.mongodb.net/ixsaan?retryWrites=true&w=majority"
-    );
+    await mongoose.connect(process.env.MONGO_URI);
   } catch (err) {
     console.log(err);
   }
