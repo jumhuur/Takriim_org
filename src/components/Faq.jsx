@@ -5,17 +5,17 @@ import useSWR from "swr";
 function Fqa() {
   const [last, setlast] = useState(null);
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, mutate, error, isLoading } = useSWR(
-    `http://localhost:3000/api/Tabaruc/getAll/lastDone`,
-    fetcher
-  );
+  const {
+    data: lasnone,
+    mutate,
+    error,
+    isLoading,
+  } = useSWR(`http://localhost:3000/api/Tabaruc/getAll/lastDone`, fetcher);
 
   useEffect(() => {
     mutate();
-    setlast(data && data[0]);
-  }, [data]);
-
-  console.log(last);
+    setlast(lasnone && lasnone[0]);
+  }, [lasnone, mutate]);
 
   return (
     <>

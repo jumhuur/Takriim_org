@@ -1230,10 +1230,6 @@ div.faq {
       }
       button {
         @include btn-web(35%);
-        background-color: $color-Gaar;
-        &:hover {
-          background-color: #029f70;
-        }
       }
     }
   }
