@@ -86,7 +86,7 @@ async function MainPage({ params }) {
                   <div className="progress">
                     <span
                       style={{
-                        width: `${(Total / info.Hadaf) * 100}%`,
+                        width: `${(Total / info.Hadaf) * 100 + 5}%`,
                       }}
                     >
                       <span>
