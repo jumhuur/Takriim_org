@@ -1,5 +1,5 @@
 async function getData() {
-  const res = await fetch("http://127.0.0.1:3000/api/users/coutusers", {
+  const res = await fetch("http://localhost:3000/api/users/coutusers", {
     cache: "default",
   });
 
@@ -11,7 +11,7 @@ async function getData() {
 }
 
 const GetTotalTabaruce = async () => {
-  const data = await fetch("http://127.0.0.1:3000/api/Tabaruc/getTotal/Total", {
+  const data = await fetch("http://localhost:3000/api/Tabaruc/getTotal/Total", {
     cache: "default",
   });
 
@@ -22,7 +22,7 @@ const GetTotalTabaruce = async () => {
 };
 
 const GetDeeqbixye_count = async () => {
-  const res = await fetch("http://127.0.0.1:3000/api/Tabaruc/getAll/Count", {
+  const res = await fetch("http://localhost:3000/api/Tabaruc/getAll/Count", {
     cache: "default",
   });
   if (!res.ok) {

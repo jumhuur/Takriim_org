@@ -50,7 +50,7 @@ const FromRaber = ({ info, Id, Total }) => {
 
   const UpdateAction = async () => {
     const updatenow = await fetch(
-      `http://127.0.0.1:3000/api/projects/update/${Id}`,
+      `http://localhost:3000/api/projects/update/${Id}`,
       {
         method: "PATCH",
         body: JSON.stringify({ Tabaruc }),
@@ -65,7 +65,7 @@ const FromRaber = ({ info, Id, Total }) => {
   const AddTabaruc = async () => {
     try {
       const AddTabaruc = await fetch(
-        "http://127.0.0.1:3000/api/Tabaruc/addTabaruc",
+        "http://localhost:3000/api/Tabaruc/addTabaruc",
         {
           method: "POST",
           body: JSON.stringify(fildesTabaruc),
@@ -107,17 +107,17 @@ const FromRaber = ({ info, Id, Total }) => {
               // tani sax maaha
               console.log(data.responseMsg);
               //Qaybta saxda ayaa leh  Lakiin tijaabo ahaan ayaan halkan ugu qoray
-              // AddTabaruc();
-              // setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
-              // setimg(animationData);
-              // setcln("Sax");
-              // setwait(0);
-              //Qaybta qaladka ah
-              setmsg("USER_API_IS_NOT_ACTIVE");
-              setimg(animationData2);
-              setcln("Qalad");
+              AddTabaruc();
+              setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
+              setimg(animationData);
+              setcln("Sax");
               setwait(0);
-              setLooding(false);
+              //Qaybta qaladka ah
+              // setmsg("USER_API_IS_NOT_ACTIVE");
+              // setimg(animationData2);
+              // setcln("Qalad");
+              // setwait(0);
+              // setLooding(false);
             } else {
               AddTabaruc();
               setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);

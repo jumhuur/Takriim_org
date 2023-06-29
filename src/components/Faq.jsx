@@ -1,4 +1,22 @@
+"use client";
+import { useEffect, useState } from "react";
+import { format } from "timeago.js";
+import useSWR from "swr";
 function Fqa() {
+  const [last, setlast] = useState(null);
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, mutate, error, isLoading } = useSWR(
+    `http://localhost:3000/api/Tabaruc/getAll/lastDone`,
+    fetcher
+  );
+
+  useEffect(() => {
+    mutate();
+    setlast(data && data[0]);
+  }, [data]);
+
+  console.log(last);
+
   return (
     <>
       <div className="faq">
@@ -67,15 +85,18 @@ function Fqa() {
             </div>
             <div className="btn_start">
               <div className="qoraalo_btn_start">
-                <h2>Si aad u fudaydiso hawsha tabarucaaga.</h2>
+                <h2>Kamid Noqo dadka u Tartamaya khayrka.</h2>
                 <p>
-                  Ka samayso Akoon shabakada ixsaan adoo isku diwan galinaya
-                  wakhti kooban .
+                  Tabarucii ugu danbeeyay ee shabakada dhexdeeda dhaca wax uu
+                  ahaa kan hoose .
                 </p>
               </div>
-              <button className="start_btn_faq">
-                Akoon Cusub <i className="fa-solid fa-arrow-right"></i>
-              </button>
+              {last && (
+                <button className="start_btn_faq">
+                  <i class="fa-solid fa-wallet"></i> {last.Lacagta} ${" "}
+                  <i class="fa-regular fa-clock"></i> {format(last.createdAt)}
+                </button>
+              )}
             </div>
           </div>
         </div>
