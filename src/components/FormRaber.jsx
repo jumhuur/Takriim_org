@@ -107,17 +107,17 @@ const FromRaber = ({ info, Id, Total }) => {
               // tani sax maaha
               console.log(data.responseMsg);
               //Qaybta saxda ayaa leh  Lakiin tijaabo ahaan ayaan halkan ugu qoray
-              AddTabaruc();
-              setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
-              setimg(animationData);
-              setcln("Sax");
-              setwait(0);
-              //Qaybta qaladka ah
-              // setmsg("USER_API_IS_NOT_ACTIVE");
-              // setimg(animationData2);
-              // setcln("Qalad");
+              // AddTabaruc();
+              // setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
+              // setimg(animationData);
+              // setcln("Sax");
               // setwait(0);
-              // setLooding(false);
+              //Qaybta qaladka ah
+              setmsg("USER_API_IS_NOT_ACTIVE");
+              setimg(animationData2);
+              setcln("Qalad");
+              setwait(0);
+              setLooding(false);
             } else {
               AddTabaruc();
               setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
