@@ -79,7 +79,7 @@ function About() {
             </div>
           </div>
           <div className="qayb midig">
-            <Image fill={true} src="/Images/dashkit02.png" alt="dhash" />
+            <Image fill={true} src="/Images/dhash1.png" alt="dhash" />
           </div>
         </div>
       </div>
