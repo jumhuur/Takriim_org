@@ -33,6 +33,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
+import Tirakoob_skl from "./Skeletons/Tirakoob";
 function TiroKoobyo() {
   const [Count, setCount] = useState(null);
   const [TotalTabaruc, setTotalTabaruc] = useState(null);
@@ -89,16 +90,20 @@ function TiroKoobyo() {
                 </g>
               </svg>
             </div>
-            <div className="qoraal">
-              <h2>
-                <i className="fa-solid fa-sack-dollar"></i> {TotalTabaruc}{" "}
-                <span className="Tirokoob_titels">$ Dollar</span>
-              </h2>
-              <p>
-                Tabruca sanadlaha ah ee ee shabakada Takriim waxa uu gaadhay
-                halkii ugu saraysay sanakada 2023.
-              </p>
-            </div>
+            {TotalTabaruc ? (
+              <div className="qoraal">
+                <h2>
+                  <i className="fa-solid fa-sack-dollar"></i> {TotalTabaruc}{" "}
+                  <span className="Tirokoob_titels">$ Dollar</span>
+                </h2>
+                <p>
+                  Tabruca sanadlaha ah ee ee shabakada Takriim waxa uu gaadhay
+                  halkii ugu saraysay sanakada 2023.
+                </p>
+              </div>
+            ) : (
+              <Tirakoob_skl />
+            )}
           </div>
           <div className="card lacag">
             <div className="icon">
@@ -122,17 +127,21 @@ function TiroKoobyo() {
                 </g>
               </svg>
             </div>
-            <div className="qoraal">
-              <h2>
-                <i className="fa-solid fa-hand-holding-heart"></i>{" "}
-                {countTabaruc}{" "}
-                <span className="Tirokoob_titels">Deeq Bixiye</span>
-              </h2>
-              <p>
-                Tirada guud ee dadka Tabarucyadooda ku bixiyay shabakada Takriim
-                intii ay shaqaynaysay
-              </p>
-            </div>
+            {countTabaruc ? (
+              <div className="qoraal">
+                <h2>
+                  <i className="fa-solid fa-hand-holding-heart"></i>{" "}
+                  {countTabaruc}{" "}
+                  <span className="Tirokoob_titels">Deeq Bixiye</span>
+                </h2>
+                <p>
+                  Tirada guud ee dadka Tabarucyadooda ku bixiyay shabakada
+                  Takriim intii ay shaqaynaysay
+                </p>
+              </div>
+            ) : (
+              <Tirakoob_skl />
+            )}
           </div>
           <div className="card dad">
             <div className="icon">
@@ -161,16 +170,20 @@ function TiroKoobyo() {
                 </g>
               </svg>
             </div>
-            <div className="qoraal">
-              <h2>
-                <i className="fa-solid fa-users"></i> {Count}{" "}
-                <span className="Tirokoob_titels">Isticmaale</span>
-              </h2>
-              <p>
-                isticmaalayaasha shabakada Takriim si rasmiya akoon ugu leh wax
-                ku dhawyahay 8 kun qof sanadkan 2023.
-              </p>
-            </div>
+            {Count ? (
+              <div className="qoraal">
+                <h2>
+                  <i className="fa-solid fa-users"></i> {Count}{" "}
+                  <span className="Tirokoob_titels">Isticmaale</span>
+                </h2>
+                <p>
+                  isticmaalayaasha shabakada Takriim si rasmiya akoon ugu leh
+                  wax ku dhawyahay 8 kun qof sanadkan 2023.
+                </p>
+              </div>
+            ) : (
+              <Tirakoob_skl />
+            )}
           </div>
         </div>
       </div>
