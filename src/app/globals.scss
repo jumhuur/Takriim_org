@@ -1317,6 +1317,21 @@ div.over {
       //background-color: $madaw;
       @include dynamic-flex(center, center, row, 0px);
       &.bidix_login {
+        h2.comm {
+          @include Totile-H(1.3rem, $main-color2);
+          padding: 15px;
+        }
+
+        a {
+          width: fit-content;
+          button.comm {
+            @include btn-web(100%);
+            width: 250px;
+            height: 50px;
+            padding: 15px;
+          }
+        }
+
         img {
           width: 100%;
           object-fit: cover;

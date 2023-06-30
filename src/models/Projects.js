@@ -33,6 +33,10 @@ const ProjectsSchema = new Schema(
       type: String,
       required: true,
     },
+    Active: {
+      type: Boolean,
+      require: true,
+    },
   },
   { timestamps: true }
 );

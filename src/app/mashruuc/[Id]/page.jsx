@@ -4,6 +4,7 @@ import Provider from "@/components/Provide";
 import FromRaber from "@/components/FormRaber";
 import LastTabaruc from "@/components/lastTabaruc";
 import useSWR from "swr";
+import Comming from "@/components/Comming";
 async function getData(Id) {
   const res = await fetch(`http://127.0.0.1:3000/api/projects/${Id}`, {
     // next: { revalidate: 10 },
@@ -48,6 +49,7 @@ async function MainPage({ params }) {
   console.log(Total);
   return (
     <>
+      {!info?.Active && <Comming />}
       <Topinfo info={info} />
       <Provider>
         <div className="Info">
