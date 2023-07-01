@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 async function getData() {
   const res = await fetch("http://localhost:3000/api/projects/getall", {
-    cache: "reload",
+    cache: "no-store",
   });
 
   if (!res.ok) {
