@@ -50,7 +50,7 @@ const FromRaber = ({ info, Id, Total }) => {
 
   const UpdateAction = async () => {
     const updatenow = await fetch(
-      `http://localhost:3000/api/projects/update/${Id}`,
+      `https://tabaruc.vercel.app/api/projects/update/${Id}`,
       {
         method: "PATCH",
         body: JSON.stringify({ Tabaruc }),
@@ -65,7 +65,7 @@ const FromRaber = ({ info, Id, Total }) => {
   const AddTabaruc = async () => {
     try {
       const AddTabaruc = await fetch(
-        "http://localhost:3000/api/Tabaruc/addTabaruc",
+        "https://tabaruc.vercel.app/api/Tabaruc/addTabaruc",
         {
           method: "POST",
           body: JSON.stringify(fildesTabaruc),

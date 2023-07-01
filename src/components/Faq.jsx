@@ -10,7 +10,7 @@ function Fqa() {
     mutate,
     error,
     isLoading,
-  } = useSWR(`http://localhost:3000/api/Tabaruc/getAll/lastDone`, fetcher);
+  } = useSWR(`https://tabaruc.vercel.app/api/Tabaruc/getAll/lastDone`, fetcher);
 
   useEffect(() => {
     mutate();

@@ -20,7 +20,7 @@ import Link from "next/link";
 const Caafimaad = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/projects/getall`,
+    `https://tabaruc.vercel.app/api/projects/getall`,
     fetcher
   );
   //const data = await getData();

@@ -2,7 +2,7 @@ import EmpatyTabaruc from "./EmpatyTabaruc";
 import { format } from "timeago.js";
 async function getTabaruc(Id) {
   const res1 = await fetch(
-    `http://localhost:3000/api/Tabaruc/proTabarucyo/${Id}`,
+    `https://tabaruc.vercel.app/api/Tabaruc/proTabarucyo/${Id}`,
     {
       cache: "no-store",
     }
@@ -17,7 +17,7 @@ async function getTabaruc(Id) {
 
 async function GetCount(Id) {
   const res3 = await fetch(
-    `http://localhost:3000/api/Tabaruc/countproject/${Id}`,
+    `https://tabaruc.vercel.app/api/Tabaruc/countproject/${Id}`,
     {
       cache: "no-store",
     }

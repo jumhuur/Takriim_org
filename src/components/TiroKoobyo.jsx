@@ -1,5 +1,5 @@
 // async function getData() {
-//   const res = await fetch("http://localhost:3000/api/users/coutusers", {
+//   const res = await fetch("https://tabaruc.vercel.app/api/users/coutusers", {
 //     cache: "default",
 //   });
 
@@ -11,7 +11,7 @@
 // }
 
 // const GetTotalTabaruce = async () => {
-//   const data = await fetch("http://localhost:3000/api/Tabaruc/getTotal/Total", {
+//   const data = await fetch("https://tabaruc.vercel.app/api/Tabaruc/getTotal/Total", {
 //     cache: "default",
 //   });
 
@@ -22,7 +22,7 @@
 // };
 
 // const GetDeeqbixye_count = async () => {
-//   const res = await fetch("http://localhost:3000/api/Tabaruc/getAll/Count", {
+//   const res = await fetch("https://tabaruc.vercel.app/api/Tabaruc/getAll/Count", {
 //     cache: "default",
 //   });
 //   if (!res.ok) {
@@ -41,15 +41,15 @@ function TiroKoobyo() {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data: CountUser, mutate: m1 } = useSWR(
-    `http://localhost:3000/api/users/coutusers`,
+    `https://tabaruc.vercel.app/api/users/coutusers`,
     fetcher
   );
   const { data: GetTotalTabaruce, mutate: m2 } = useSWR(
-    `http://localhost:3000/api/Tabaruc/getTotal/Total`,
+    `https://tabaruc.vercel.app/api/Tabaruc/getTotal/Total`,
     fetcher
   );
   const { data: GetDeeqbixye_count, mutate: m3 } = useSWR(
-    `http://localhost:3000/api/Tabaruc/getAll/Count`,
+    `https://tabaruc.vercel.app/api/Tabaruc/getAll/Count`,
     fetcher
   );
   // const Count = CountUser;
