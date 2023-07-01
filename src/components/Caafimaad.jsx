@@ -1,25 +1,32 @@
+"use client";
 import Empaty from "./Empaty";
 import { format } from "timeago.js";
+import useSWR from "swr";
 // import { Auth } from "../context/Auth";
 import ProjectSkl from "./Skeletons/ProjectSkeleton";
 import Image from "next/image";
 import Link from "next/link";
-async function getData() {
-  const res = await fetch("http://localhost:3000/api/projects/getall", {
-    cache: "no-store",
-  });
+// async function getData() {
+//   const res = await fetch("http://localhost:3000/api/projects/getall", {
+//     cache: "no-store",
+//   });
 
-  if (!res.ok) {
-    throw new Error("Wax macluumaada lama hellin !");
-  }
+//   if (!res.ok) {
+//     throw new Error("Wax macluumaada lama hellin !");
+//   }
 
-  return res.json();
-}
-const Caafimaad = async () => {
-  const data = await getData();
+//   return res.json();
+// }
+const Caafimaad = () => {
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, mutate, isLoading } = useSWR(
+    `http://localhost:3000/api/projects/getall`,
+    fetcher
+  );
+  //const data = await getData();
   return (
     <>
-      {data && data.length > 0 ? (
+      {data && data ? (
         <>
           {data &&
             data.map((card) => (
@@ -81,11 +88,11 @@ const Caafimaad = async () => {
               </div>
             ))}
         </>
-      ) : !loading ? (
+      ) : !isLoading ? (
         <>{ProjectSkl && [1, 2, 3].map((elm) => <ProjectSkl key={elm} />)}</>
       ) : (
         // <p className='Loading'>Fadlan Yara Sug ...</p>
-        <Empaty />
+        <>{ProjectSkl && [1, 2, 3].map((elm) => <ProjectSkl key={elm} />)}</>
       )}
     </>
   );
