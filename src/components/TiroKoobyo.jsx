@@ -63,7 +63,7 @@ function TiroKoobyo() {
     setCount(CountUser && CountUser);
     setTotalTabaruc(GetTotalTabaruce && GetTotalTabaruce);
     setcountTabaruc(GetDeeqbixye_count && GetDeeqbixye_count);
-  }, [CountUser, GetDeeqbixye_count, GetTotalTabaruce]);
+  }, [CountUser, GetDeeqbixye_count, GetTotalTabaruce, m1, m2, m3]);
   return (
     <section className="tirokoobyo">
       <div className="haye">

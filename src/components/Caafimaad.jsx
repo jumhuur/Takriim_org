@@ -6,6 +6,7 @@ import useSWR from "swr";
 import ProjectSkl from "./Skeletons/ProjectSkeleton";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 // async function getData() {
 //   const res = await fetch("http://localhost:3000/api/projects/getall", {
 //     cache: "no-store",
@@ -24,6 +25,10 @@ const Caafimaad = () => {
     fetcher
   );
   //const data = await getData();
+
+  useEffect(() => {
+    mutate();
+  }, [mutate]);
   return (
     <>
       {data && data ? (
