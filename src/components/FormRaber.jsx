@@ -39,6 +39,7 @@ const FromRaber = ({ info, Id, Total }) => {
 
   const Somtel = "65";
   const telesom = "63";
+  const Evc = "252";
   const pattern = /[^0-9]/g;
   const LacagReg = /[^0-9.]/g;
 
@@ -89,7 +90,7 @@ const FromRaber = ({ info, Id, Total }) => {
     setmsg("Fadlan Telefankaaga Eeg");
     setwait(true);
     setLooding(true);
-    if (Pyment_type === "zaad") {
+    if (Pyment_type === "zaad" || Pyment_type === "Evc") {
       // telesom action
       const telesom = () => {
         evc({
@@ -112,6 +113,7 @@ const FromRaber = ({ info, Id, Total }) => {
               setimg(animationData);
               setcln("Sax");
               setwait(0);
+              setLooding(false);
               //Qaybta qaladka ah
               // setmsg("USER_API_IS_NOT_ACTIVE");
               // setimg(animationData2);
@@ -134,7 +136,18 @@ const FromRaber = ({ info, Id, Total }) => {
     if (Pyment_type === "edahab") {
       const Somtel = () => {
         console.log("Somtel pyment");
-        //AddTabaruc()
+        //Qaybta qaladka ah
+        setmsg("SOMTEL_API_IS_NOT_ACTIVE");
+        setimg(animationData2);
+        setcln("Qalad");
+        setwait(0);
+        setLooding(false);
+        //Qatbara saxda aha
+        // AddTabaruc();
+        // setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
+        // setimg(animationData);
+        // setcln("Sax");
+        // setwait(0);
       };
       Somtel();
     }
@@ -145,6 +158,9 @@ const FromRaber = ({ info, Id, Total }) => {
   };
   const toggale_edahab = (e) => {
     setPyment_type("edahab");
+  };
+  const toggale_Evc = (e) => {
+    setPyment_type("Evc");
   };
   return (
     <>
@@ -178,9 +194,17 @@ const FromRaber = ({ info, Id, Total }) => {
                         <i className="fa-solid fa-circle-check"></i> edahab
                       </span>
                     </label>
+                    <label
+                      onClick={toggale_Evc}
+                      className={Pyment_type === "Evc" ? "Evc active" : "Evc"}
+                    >
+                      <span>
+                        <i className="fa-solid fa-circle-check"></i> Evc
+                      </span>
+                    </label>
                     <input type="checkbox" name="payment" value={Pyment_type} />
                   </div>
-                  {/* <span>Edahab</span> */}
+                  {/* <span>Evc</span> */}
                 </div>
               </div>
               <div className="donter_info">
@@ -202,6 +226,8 @@ const FromRaber = ({ info, Id, Total }) => {
                     <span className="Ll">{telesom}</span>
                   ) : Pyment_type === "edahab" ? (
                     <span className="Ll">{Somtel}</span>
+                  ) : Pyment_type === "Evc" ? (
+                    <span className="Ll">{Evc}</span>
                   ) : (
                     <span className="Ll">No</span>
                   )}

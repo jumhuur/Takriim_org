@@ -55,7 +55,6 @@ function TiroKoobyo() {
   // const Count = CountUser;
   // const TotalTabaruc = GetTotalTabaruce;
   // const countTabaruc = GetDeeqbixye_count;
-
   useEffect(() => {
     m1();
     m2();
@@ -63,7 +62,9 @@ function TiroKoobyo() {
     setCount(CountUser && CountUser);
     setTotalTabaruc(GetTotalTabaruce && GetTotalTabaruce);
     setcountTabaruc(GetDeeqbixye_count && GetDeeqbixye_count);
-  }, [CountUser, GetDeeqbixye_count, GetTotalTabaruce, m1, m2, m3]);
+  }, [m1, m2, m3]);
+
+  console.log(CountUser);
   return (
     <section className="tirokoobyo">
       <div className="haye">

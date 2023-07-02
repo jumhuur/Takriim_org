@@ -6,7 +6,7 @@ const Comming = () => {
       <div className="haye">
         <div className="inhaye">
           <div className="login  comm">
-            <div className="llc bidix_login">
+            <div className="llc bidix_login comm">
               <Image fill={true} src="/Images/comm.svg" alt="Login_img" />
               {/* <Lottie animationData={animationData} /> */}
               <h2 className="comm">Mashruucan Wali Lama Bilaabin</h2>

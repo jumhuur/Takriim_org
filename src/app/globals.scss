@@ -1320,6 +1320,7 @@ div.over {
         h2.comm {
           @include Totile-H(1.3rem, $main-color2);
           padding: 15px;
+          text-align: center;
         }
 
         a {
@@ -1885,7 +1886,7 @@ div.laba_qaybood {
                   }
 
                   label {
-                    width: 50%;
+                    width: 35%;
                     height: 100%;
                     border-radius: 25px;
                     position: absolute;
@@ -2337,6 +2338,9 @@ div.addPro {
   }
 
   div.over div.login div.llc {
+    &.comm {
+      display: flex;
+    }
     display: none;
   }
 
