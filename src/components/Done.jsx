@@ -2,11 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Lottie from "lottie-react";
-import animationData from "../../public/images/123026-celebrations-begin.json";
-import animationData2 from "../../public/images/143796-blue-confetti.json";
-import animationData3 from "../../public/images/97818-celebration-animation.json";
-import animationData4 from "../../public/images/112910-confetti.json";
-import animationData5 from "../../public/images/116495-thank-you-without-text.json";
+import animationData from "../../public/Images/123026-celebrations-begin.json";
+import animationData2 from "../../public/Images/143796-blue-confetti.json";
+import animationData3 from "../../public/Images/97818-celebration-animation.json";
+import animationData4 from "../../public/Images/112910-confetti.json";
+import animationData5 from "../../public/Images/116495-thank-you-without-text.json";
 //97818-celebration-animation 1aad
 //123026-celebrations-begin   2aad
 //112910-confetti
