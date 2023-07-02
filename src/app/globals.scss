@@ -1311,6 +1311,9 @@ div.over {
     border-radius: 10px;
     @include dynamic-flex(center, center, row, 10px);
     padding: 15px 0px;
+    &.Done {
+      background-color: #ffffff14;
+    }
     div.llc {
       height: 100%;
       width: calc(95% / 2);
@@ -1321,6 +1324,12 @@ div.over {
           @include Totile-H(1.3rem, $main-color2);
           padding: 15px;
           text-align: center;
+          &.done {
+            @include Totile-H(1.3rem, $bg-main);
+            span {
+              color: $color-Gaar;
+            }
+          }
         }
 
         a {

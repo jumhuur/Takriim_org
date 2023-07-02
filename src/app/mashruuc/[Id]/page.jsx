@@ -5,6 +5,7 @@ import FromRaber from "@/components/FormRaber";
 import LastTabaruc from "@/components/lastTabaruc";
 import useSWR from "swr";
 import Comming from "@/components/Comming";
+import Done from "@/components/Done";
 async function getData(Id) {
   const res = await fetch(`https://tabaruc.vercel.app/api/projects/${Id}`, {
     // next: { revalidate: 10 },
@@ -49,9 +50,9 @@ async function MainPage({ params }) {
   const info = await getData(Id);
   const lastTotal = await GetTotal(Id);
   const Total = lastTotal.length > 0 ? lastTotal[0].Total : 0;
-  console.log(Total);
   return (
     <>
+      {Total >= info?.Hadaf && <Done Total={Total} />}
       {!info?.Active && <Comming />}
       <Topinfo info={info} />
       <Provider>
