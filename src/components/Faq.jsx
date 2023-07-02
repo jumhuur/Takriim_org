@@ -14,8 +14,9 @@ function Fqa() {
 
   useEffect(() => {
     mutate();
-    setlast(lasnone && lasnone[0]);
-  }, [lasnone, mutate]);
+    //setlast(lasnone && lasnone[0]);
+  }, [mutate]);
+  console.log(lasnone);
 
   return (
     <>
@@ -91,10 +92,11 @@ function Fqa() {
                   ahaa kan hoose .
                 </p>
               </div>
-              {last && (
+              {lasnone && (
                 <button className="start_btn_faq">
-                  <i class="fa-solid fa-wallet"></i> {last.Lacagta} ${" "}
-                  <i class="fa-regular fa-clock"></i> {format(last.createdAt)}
+                  <i class="fa-solid fa-wallet"></i> {lasnone[0].Lacagta} ${" "}
+                  <i class="fa-regular fa-clock"></i>{" "}
+                  {format(lasnone[0].createdAt)}
                 </button>
               )}
             </div>

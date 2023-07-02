@@ -1,6 +1,6 @@
 // async function getData() {
 //   const res = await fetch("https://tabaruc.vercel.app/api/users/coutusers", {
-//     cache: "default",
+//     cache: "no-cache",
 //   });
 
 //   if (!res.ok) {
@@ -11,9 +11,12 @@
 // }
 
 // const GetTotalTabaruce = async () => {
-//   const data = await fetch("https://tabaruc.vercel.app/api/Tabaruc/getTotal/Total", {
-//     cache: "default",
-//   });
+//   const data = await fetch(
+//     "https://tabaruc.vercel.app/api/Tabaruc/getTotal/Total",
+//     {
+//       cache: "no-cache",
+//     }
+//   );
 
 //   if (!data.ok) {
 //     throw new Error("qalad ayaa jira !");
@@ -22,9 +25,12 @@
 // };
 
 // const GetDeeqbixye_count = async () => {
-//   const res = await fetch("https://tabaruc.vercel.app/api/Tabaruc/getAll/Count", {
-//     cache: "default",
-//   });
+//   const res = await fetch(
+//     "https://tabaruc.vercel.app/api/Tabaruc/getAll/Count",
+//     {
+//       cache: "no-cache",
+//     }
+//   );
 //   if (!res.ok) {
 //     throw new Error("not found");
 //   }
@@ -40,29 +46,30 @@ function TiroKoobyo() {
   const [countTabaruc, setcountTabaruc] = useState(null);
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data: CountUser, mutate: m1 } = useSWR(
+  const { data: CountUser, mutate: mutate1 } = useSWR(
     `https://tabaruc.vercel.app/api/users/coutusers`,
     fetcher
   );
-  const { data: GetTotalTabaruce, mutate: m2 } = useSWR(
+  const { data: GetTotalTabaruce, mutate: mutate2 } = useSWR(
     `https://tabaruc.vercel.app/api/Tabaruc/getTotal/Total`,
     fetcher
   );
-  const { data: GetDeeqbixye_count, mutate: m3 } = useSWR(
+  const { data: GetDeeqbixye_count, mutate: mutate3 } = useSWR(
     `https://tabaruc.vercel.app/api/Tabaruc/getAll/Count`,
     fetcher
   );
-  // const Count = CountUser;
-  // const TotalTabaruc = GetTotalTabaruce;
-  // const countTabaruc = GetDeeqbixye_count;
+  // const Count = await getData();
+  // const TotalTabaruc = await GetTotalTabaruce();
+  // const countTabaruc = await GetDeeqbixye_count();
+
   useEffect(() => {
-    m1();
-    m2();
-    m3();
+    mutate1();
+    mutate2();
+    mutate3();
     setCount(CountUser && CountUser);
     setTotalTabaruc(GetTotalTabaruce && GetTotalTabaruce);
     setcountTabaruc(GetDeeqbixye_count && GetDeeqbixye_count);
-  }, [m1, m2, m3]);
+  }, [CountUser, GetDeeqbixye_count, GetTotalTabaruce]);
 
   console.log(CountUser);
   return (
