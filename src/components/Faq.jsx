@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { format } from "timeago.js";
 import useSWR from "swr";
 function Fqa() {
-  const [last, setlast] = useState(null);
+  //const [last, setlast] = useState(null);
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const {
     data: lasnone,
@@ -16,7 +16,6 @@ function Fqa() {
     mutate();
     //setlast(lasnone && lasnone[0]);
   }, [mutate]);
-  console.log(lasnone);
 
   return (
     <>
