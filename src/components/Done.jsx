@@ -13,7 +13,7 @@ const Done = ({ Total }) => {
   const Shukran = useRef();
   useEffect(() => {
     code.current.play();
-    //code.current.loop = true;
+    code.current.loop = true;
     Shukran.current.play();
   }, []);
   return (
@@ -29,7 +29,7 @@ const Done = ({ Total }) => {
                 <Lottie animationData={animationData4} />
                 <Lottie animationData={animationData5} />
               </section>
-              <audio ref={code} src="/Media/farxad1.mp3" />
+              <audio ref={code} src="/Media/Farxad1.mp3" />
               <audio ref={Shukran} src="/Media/Shukran.mp3" />
               {/* <Lottie animationData={animationData} /> */}
               <h2 className="comm done">
