@@ -7,9 +7,9 @@ import useSWR from "swr";
 import Comming from "@/components/Comming";
 import Done from "@/components/Done";
 async function getData(Id) {
-  const res = await fetch(`http://127.0.0.1:3000/api/projects/${Id}`, {
-    // next: { revalidate: 10 },
-    cache: "no-store",
+  const res = await fetch(`https://tabaruc.vercel.app/api/projects/${Id}`, {
+    next: { revalidate: 1 },
+    // cache: "no-store",
   });
 
   if (!res.ok) {
@@ -20,10 +20,13 @@ async function getData(Id) {
 }
 
 async function GetTotal(Id) {
-  const res = await fetch(`http://127.0.0.1:3000/api/Tabaruc/getTotal/${Id}`, {
-    // next: { revalidate: 10 },
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `https://tabaruc.vercel.app/api/Tabaruc/getTotal/${Id}`,
+    {
+      next: { revalidate: 1 },
+      // cache: "no-store",
+    }
+  );
 
   return res.json();
 }
