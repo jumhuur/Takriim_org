@@ -6,13 +6,14 @@ import animationData from "../../public/Images/123026-celebrations-begin.json";
 import animationData2 from "../../public/Images/143796-blue-confetti.json";
 import animationData3 from "../../public/Images/97818-celebration-animation.json";
 import animationData4 from "../../public/Images/112910-confetti.json";
-// import animationData5 from "../../public/Images/116495-thank-you-without-text.json";
+import animationData5 from "../../public/Images/68064-success-celebration.json";
 import { useEffect, useRef } from "react";
 const Done = ({ Total }) => {
   const code = useRef();
   const Shukran = useRef();
   useEffect(() => {
-    code.current.play();
+    code.current.play().loop = true;
+    code.current.loop = true;
     Shukran.current.play();
   }, []);
   return (
@@ -26,6 +27,7 @@ const Done = ({ Total }) => {
                 <Lottie animationData={animationData2} />
                 <Lottie animationData={animationData3} />
                 <Lottie animationData={animationData4} />
+                <Lottie animationData={animationData5} />
               </section>
               <audio ref={code} src="/Media/farxad1.mp3" />
               <audio ref={Shukran} src="/Media/Shukran.mp3" />
@@ -36,7 +38,7 @@ const Done = ({ Total }) => {
               </h2>
               <Link href="/">
                 <button className="comm">
-                  <i className="fa-solid fa-circle-check"></i> OK
+                  <i className="fa-solid fa-face-smile"></i> OK
                 </button>
               </Link>
             </div>
