@@ -50,31 +50,25 @@ const FromRaber = ({ info, Id, Total }) => {
   };
 
   const UpdateAction = async () => {
-    const updatenow = await fetch(
-      `http://127.0.0.1:3000/api/projects/update/${Id}`,
-      {
-        method: "PATCH",
-        body: JSON.stringify({ Tabaruc }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const updatenow = await fetch(`/api/projects/update/${Id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ Tabaruc }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     return await updatenow.json();
   };
 
   const AddTabaruc = async () => {
     try {
-      const AddTabaruc = await fetch(
-        "http://127.0.0.1:3000/api/Tabaruc/addTabaruc",
-        {
-          method: "POST",
-          body: JSON.stringify(fildesTabaruc),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const AddTabaruc = await fetch("/api/Tabaruc/addTabaruc", {
+        method: "POST",
+        body: JSON.stringify(fildesTabaruc),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       if (AddTabaruc.ok) {
         UpdateAction();
       }

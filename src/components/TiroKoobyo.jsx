@@ -47,15 +47,15 @@ function TiroKoobyo() {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data: CountUser, mutate: mutate1 } = useSWR(
-    `http://127.0.0.1:3000/api/users/coutusers`,
+    `/api/users/coutusers`,
     fetcher
   );
   const { data: GetTotalTabaruce, mutate: mutate2 } = useSWR(
-    `http://127.0.0.1:3000/api/Tabaruc/getTotal/Total`,
+    `/api/Tabaruc/getTotal/Total`,
     fetcher
   );
   const { data: GetDeeqbixye_count, mutate: mutate3 } = useSWR(
-    `http://127.0.0.1:3000/api/Tabaruc/getAll/Count`,
+    `/api/Tabaruc/getAll/Count`,
     fetcher
   );
   // const Count = await getData();

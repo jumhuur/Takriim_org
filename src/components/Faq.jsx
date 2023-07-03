@@ -1,51 +1,21 @@
 "use client";
-import { useEffect, useState } from "react";
-// import useSWR from "swr";
+import { useEffect } from "react";
 import { format } from "timeago.js";
-// const GetData = async () => {
-//   const data = await fetch(
-//     "http://localhost:3000//api/Tabaruc/getAll/lastDone",
-//     {
-//       cache: "no-store",
-//     }
-//   );
-
-//   if (!data.ok) {
-//     throw new Error("qalad ayaa dhacay");
-//   }
-
-//   return data.json();
-// };
+import useSWR from "swr";
 function Fqa() {
-  const [last, setlast] = useState(null);
-  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  // const {
-  //   data: last,
-  //   mutate,
-  //   error,
-  //   isLoading,
-  // } = useSWR(`https://tabaruc.vercel.app/api/Tabaruc/getAll/lastDone`, fetcher);
-  const GetResponse = async () => {
-    const data = await fetch(
-      "http://127.0.0.1:3000/api/Tabaruc/getAll/lastDone"
-    );
+  //const [last, setlast] = useState(null);
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const {
+    data: lasnone,
+    mutate,
+    error,
+    isLoading,
+  } = useSWR(`/api/Tabaruc/getAll/lastDone`, fetcher);
 
-    const res = await data.json();
-    if (!data.ok) {
-      throw new Error("Qalad ayaa jira");
-    }
-
-    if (data.ok) {
-      setlast(res);
-    }
-  };
   useEffect(() => {
-    GetResponse();
-  }, []);
-
-  console.log(last);
-
-  //const lasnone = await GetData();
+    mutate();
+    //setlast(lasnone && lasnone[0]);
+  }, [mutate]);
 
   return (
     <>
@@ -122,11 +92,11 @@ function Fqa() {
                   ahaa kan hoose .
                 </p>
               </div>
-              {last && (
+              {lasnone && (
                 <button className="start_btn_faq">
-                  <i class="fa-solid fa-wallet"></i> {last[0].Lacagta} ${" "}
+                  <i class="fa-solid fa-wallet"></i> {lasnone[0].Lacagta} ${" "}
                   <i class="fa-regular fa-clock"></i>{" "}
-                  {format(last[0].createdAt)}
+                  {format(lasnone[0].createdAt)}
                 </button>
               )}
             </div>
