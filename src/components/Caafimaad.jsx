@@ -21,7 +21,7 @@ import { useEffect } from "react";
 const Caafimaad = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, isLoading } = useSWR(
-    `https://tabaruc.vercel.app/api/projects/getall`,
+    `http://127.0.0.1:3000/api/projects/getall`,
     fetcher
   );
   //const data = await getData();

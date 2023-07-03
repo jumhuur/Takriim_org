@@ -1,5 +1,5 @@
 // async function getData() {
-//   const res = await fetch("https://tabaruc.vercel.app/api/users/coutusers", {
+//   const res = await fetch("http://127.0.0.1:3000/api/users/coutusers", {
 //     cache: "no-cache",
 //   });
 
@@ -12,7 +12,7 @@
 
 // const GetTotalTabaruce = async () => {
 //   const data = await fetch(
-//     "https://tabaruc.vercel.app/api/Tabaruc/getTotal/Total",
+//     "http://127.0.0.1:3000/api/Tabaruc/getTotal/Total",
 //     {
 //       cache: "no-cache",
 //     }
@@ -26,7 +26,7 @@
 
 // const GetDeeqbixye_count = async () => {
 //   const res = await fetch(
-//     "https://tabaruc.vercel.app/api/Tabaruc/getAll/Count",
+//     "http://127.0.0.1:3000/api/Tabaruc/getAll/Count",
 //     {
 //       cache: "no-cache",
 //     }
@@ -47,15 +47,15 @@ function TiroKoobyo() {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data: CountUser, mutate: mutate1 } = useSWR(
-    `https://tabaruc.vercel.app/api/users/coutusers`,
+    `http://127.0.0.1:3000/api/users/coutusers`,
     fetcher
   );
   const { data: GetTotalTabaruce, mutate: mutate2 } = useSWR(
-    `https://tabaruc.vercel.app/api/Tabaruc/getTotal/Total`,
+    `http://127.0.0.1:3000/api/Tabaruc/getTotal/Total`,
     fetcher
   );
   const { data: GetDeeqbixye_count, mutate: mutate3 } = useSWR(
-    `https://tabaruc.vercel.app/api/Tabaruc/getAll/Count`,
+    `http://127.0.0.1:3000/api/Tabaruc/getAll/Count`,
     fetcher
   );
   // const Count = await getData();
