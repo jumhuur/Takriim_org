@@ -13,7 +13,7 @@ const Done = ({ Total }) => {
   const Shukran = useRef();
   useEffect(() => {
     code.current.play();
-    code.current.loop = true;
+    //code.current.loop = true;
     Shukran.current.play();
   }, []);
   return (
