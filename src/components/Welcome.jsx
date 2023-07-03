@@ -14,7 +14,7 @@ function Welcome() {
       <div className="haye">
         <div className="labaqaybood">
           <div className="qayb qorall">
-            {sesstion.status === "authenticated" ? (
+            {sesstion?.status === "authenticated" ? (
               <>
                 <h2>
                   <span>{sesstion.data.user.name}</span> Ku soo Dhawaaw
@@ -54,7 +54,7 @@ function Welcome() {
                 </button>
               )}
 
-              <button className="Xaqiijin">
+              <button className="Xaqiijin" disabled>
                 <i className="fa-solid fa-circle-check"></i> Xaqiiji Tabaruc
               </button>
             </div>
