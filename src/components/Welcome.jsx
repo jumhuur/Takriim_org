@@ -17,8 +17,8 @@ function Welcome() {
             {sesstion?.status === "authenticated" ? (
               <>
                 <h2>
-                  <span>{sesstion.data.user.name}</span> Ku soo Dhawaaw
-                  Shabakada Taysiir.
+                  <span className="name">{sesstion.data.user.name}</span> Ku soo
+                  Dhawoow Shabakada Taysiir.
                 </h2>
                 <p>
                   Taysiir waa shabakada Loogu tallo gallay Ururinta Muwaacanida
