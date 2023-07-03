@@ -11,7 +11,7 @@ function About() {
                 <span> Wax bixinta Hab casriyaysan .</span>
               </h2>
               <p>
-                Ixsaanka waa goob aad ku bixin karto deeqdada maalin ee aad
+                Taysiir waa goob aad ku bixin karto deeqdada maalin ee aad
                 aakhiro u horu marsanaysid.
               </p>
             </div>

@@ -110,7 +110,7 @@ function TiroKoobyo() {
                   <span className="Tirokoob_titels">$ Dollar</span>
                 </h2>
                 <p>
-                  Tabruca sanadlaha ah ee ee shabakada Takriim waxa uu gaadhay
+                  Tabruca sanadlaha ah ee ee shabakada Taysiir waxa uu gaadhay
                   halkii ugu saraysay sanakada 2023.
                 </p>
               </div>
@@ -149,7 +149,7 @@ function TiroKoobyo() {
                 </h2>
                 <p>
                   Tirada guud ee dadka Tabarucyadooda ku bixiyay shabakada
-                  Takriim intii ay shaqaynaysay
+                  Taysiir intii ay shaqaynaysay
                 </p>
               </div>
             ) : (
@@ -190,7 +190,7 @@ function TiroKoobyo() {
                   <span className="Tirokoob_titels">Isticmaale</span>
                 </h2>
                 <p>
-                  isticmaalayaasha shabakada Takriim si rasmiya akoon ugu leh
+                  isticmaalayaasha shabakada Taysiir si rasmiya akoon ugu leh
                   wax ku dhawyahay 8 kun qof sanadkan 2023.
                 </p>
               </div>

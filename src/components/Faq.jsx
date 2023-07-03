@@ -31,10 +31,11 @@ function Fqa() {
                     <i className="fa-solid fa-circle-question"></i>
                   </div>
                   <div className="qoraal">
-                    <h2>Maxaa loo aasaasay shabakada ixsaan ?</h2>
+                    <h2>Maxaa loo aasaasay shabakada Taysiir ?</h2>
                     <p>
-                      ixsaan waa shabakada samo fal waxaana loo aasasay caawinta
-                      dadka baahan si loogu ururiyo mucaawno hab casriya.
+                      Taysiir waa shabakada samo fal waxaana loo aasasay
+                      caawinta dadka baahan si loogu ururiyo mucaawno hab
+                      casriya.
                     </p>
                   </div>
                 </div>
@@ -43,9 +44,9 @@ function Fqa() {
                     <i className="fa-solid fa-circle-question"></i>
                   </div>
                   <div className="qoraal">
-                    <h2>Yaa iska leh Ixsaan?</h2>
+                    <h2>Yaa iska leh Taysiir?</h2>
                     <p>
-                      ixsaan waa shabakada ka dhaxaysa bulshada cid gaarna ma
+                      Taysiir waa shabakada ka dhaxaysa bulshada cid gaarna ma
                       laha eg sameeyayna waxa ugu tabarucay in wax loogu qabto
                       dadka bahan.
                     </p>
@@ -63,7 +64,7 @@ function Fqa() {
                     <h2>Sidee lagu doortaa dadka bahan?</h2>
                     <p>
                       dadka kala duwan ee mashaariicada looga furayo shabakada
-                      ixsaan waxaa lagu doortaa xaaladooda baahiyeed inta ay
+                      Taysiir waxaa lagu doortaa xaaladooda baahiyeed inta ay
                       leegtahay.
                     </p>
                   </div>
@@ -76,7 +77,7 @@ function Fqa() {
                     <h2>Qaybha aan ku bixin karrto tabaruca maxay yihiiin?</h2>
                     <p>
                       tabarucaaga waxaad ku bixin kartaa qaybha kala duwan ee
-                      shabakada ixsaan sida caafimaadka , waxabarashada ,
+                      shabakada Taysiir sida caafimaadka , waxabarashada ,
                       cuntada, Hoyga, iyo daryeelka.
                     </p>
                   </div>

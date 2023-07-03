@@ -34,7 +34,7 @@ async function GetTotal(Id) {
 export async function generateMetadata({ params }) {
   const mashruuc = await getData(params.Id);
   return {
-    title: `Ixsaan | ${mashruuc.Name}`,
+    title: `Taysiir | ${mashruuc.Name}`,
     description: mashruuc.Macluumaad,
   };
 }

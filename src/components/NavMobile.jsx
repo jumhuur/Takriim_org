@@ -28,17 +28,6 @@ function MobileNav({ Login }) {
               </span>
             </Link>
           </li>
-          {CrentUser && CrentUser.Id === "6454dba1429d70970c9c0eff" ? (
-            <li>
-              <Link href="/addProject">
-                <span>
-                  <i className="fa-solid fa-gauge-high"></i> dashboard
-                </span>
-              </Link>
-            </li>
-          ) : (
-            <></>
-          )}
           <li>
             <Link href="#">
               <span>

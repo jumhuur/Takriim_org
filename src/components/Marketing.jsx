@@ -11,7 +11,7 @@ function Marketing() {
             <div className="bidix_decr">
               <h2>
                 La jaan qaabka casriga ah
-                <span> isticmaal shabakada Takriim .</span>
+                <span> isticmaal shabakada Taysiir .</span>
               </h2>
               <p>
                 Waa qaab wax bixin casriya oo aad ilaahay ugu dhawaanayso taas
@@ -44,7 +44,7 @@ function Marketing() {
                 <div className="qoraal_war">
                   <h2>Tirakoobyada wax bixineed ee Ugu danbeeyay</h2>
                   <p>
-                    shabkada Takriim waxaa si rasmiya daaha looga furayaa wakhti
+                    shabkada Taysiir waxaa si rasmiya daaha looga furayaa wakhti
                     dhaw .
                   </p>
                 </div>

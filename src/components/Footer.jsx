@@ -14,12 +14,13 @@ function Footer() {
                 src="/Images/Logo_Cadaan.png"
                 alt="Logo"
               />
-              <p>Takriim</p>
+              <p>Taysiir</p>
             </Link>
           </div>
           <div className="q_footer">
             <p>
-              developed by <Link href="tel:0634645195">Eng Jumhuur </Link>
+              developed by{" "}
+              <Link href="https://wa.me/252634645195">Eng Jumhuur </Link>
               <span>&copy; 2023</span>{" "}
             </p>
           </div>

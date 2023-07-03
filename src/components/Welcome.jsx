@@ -18,10 +18,10 @@ function Welcome() {
               <>
                 <h2>
                   <span>{sesstion.data.user.name}</span> Ku soo Dhawaaw
-                  Shabakada Takriim.
+                  Shabakada Taysiir.
                 </h2>
                 <p>
-                  Takriim waa shabakada Loogu tallo gallay Ururinta Muwaacanida
+                  Taysiir waa shabakada Loogu tallo gallay Ururinta Muwaacanida
                   dadka baahan.
                 </p>
               </>
@@ -30,10 +30,10 @@ function Welcome() {
                 <h2>
                   Ku soo Dhawaaw
                   <br /> Shabakada
-                  <span>Takriim</span>
+                  <span>Taysiir</span>
                 </h2>
                 <p>
-                  Takriim waa shabakada Loogu tallo gallay Ururinta Muwaacanida
+                  Taysiir waa shabakada Loogu tallo gallay Ururinta Muwaacanida
                   iyo Tabarucaadka dadka baahan.
                 </p>
               </>

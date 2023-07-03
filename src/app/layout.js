@@ -7,8 +7,8 @@ import AuthProvider from "@/components/authProvider";
 const inter = Roboto({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata = {
-  title: "Takriim | Shabakada Ururinta Tabarucaadka",
-  description: "Takriim | Shabakada Ururinta Tabarucaadka",
+  title: "Taysiir | Shabakada Ururinta Tabarucaadka",
+  description: "Taysiir | Shabakada Ururinta Tabarucaadka",
 };
 
 export default function RootLayout({ children }) {
