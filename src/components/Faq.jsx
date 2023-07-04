@@ -12,6 +12,8 @@ function Fqa() {
     isLoading,
   } = useSWR(`/api/Tabaruc/getAll/lastDone`, fetcher);
 
+  mutate();
+  console.log(lasnone);
   useEffect(() => {
     mutate();
     //setlast(lasnone && lasnone[0]);
