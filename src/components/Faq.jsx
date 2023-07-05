@@ -1,9 +1,25 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { format } from "timeago.js";
 import useSWR from "swr";
+import Skllast from "./Skeletons/SKLLAST";
+// const GetData = async () => {
+//   const res = await fetch(
+//     "https://tabaruc.vercel.app/api/Tabaruc/getAll/lastDone",
+//     {
+//       next: { revalidate: 10 },
+//     }
+//   );
+
+//   if (!res.ok) {
+//     throw new Error("not found data");
+//   }
+
+//   return res.json();
+// };
+
 function Fqa() {
-  //const [last, setlast] = useState(null);
+  const [last, setlast] = useState(null);
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const {
     data: lasnone,
@@ -13,12 +29,12 @@ function Fqa() {
   } = useSWR(`/api/Tabaruc/getAll/lastDone`, fetcher);
 
   mutate();
-  console.log(lasnone);
   useEffect(() => {
     mutate();
-    //setlast(lasnone && lasnone[0]);
-  }, [mutate]);
+    setlast(lasnone && lasnone[0]);
+  }, [mutate, lasnone]);
 
+  // const lasnone = await GetData();
   return (
     <>
       <div className="faq">
@@ -94,12 +110,14 @@ function Fqa() {
                   ahaa kan hoose .
                 </p>
               </div>
-              {lasnone && (
+              {last ? (
                 <button className="start_btn_faq">
                   <i class="fa-solid fa-wallet"></i> {lasnone[0].Lacagta} ${" "}
                   <i class="fa-regular fa-clock"></i>{" "}
                   {format(lasnone[0].createdAt)}
                 </button>
+              ) : (
+                <Skllast />
               )}
             </div>
           </div>

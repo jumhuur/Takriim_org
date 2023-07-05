@@ -106,7 +106,16 @@ async function MainPage({ params }) {
                 ) : (
                   <></>
                 )}
-                <FromRaber info={info} Id={Id} Total={Total} />
+                {Total >= info?.Hadaf ? (
+                  <>
+                    <h2 className="comm done">
+                      Mahadsanidiin deqsinimadiina ayuu mashruucan ku dhamaaday
+                      <span> {Total}$</span> Ayaad Ku deeqdeen !
+                    </h2>
+                  </>
+                ) : (
+                  <FromRaber info={info} Id={Id} Total={Total} />
+                )}
               </div>
               <LastTabaruc Id={Id} />
             </div>

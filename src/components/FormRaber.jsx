@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+// import useSWR from "swr";
 import { useEffect, useState } from "react";
 import evc from "evc-api";
 import AlertSax from "./AlertSax";
@@ -48,6 +49,10 @@ const FromRaber = ({ info, Id, Total }) => {
     setfildes((perv) => ({ ...perv, [e.target.name]: e.target.value }));
     setfildesTabaruc((perv) => ({ ...perv, [e.target.name]: e.target.value }));
   };
+
+  // real time data  isticmaal swr next recomm
+  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  // const { data, mutate, isLoading } = useSWR(`/api/projects/getall`, fetcher);
 
   const UpdateAction = async () => {
     const updatenow = await fetch(`/api/projects/update/${Id}`, {

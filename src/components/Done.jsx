@@ -17,7 +17,7 @@ const Done = ({ Total }) => {
     Shukran.current.play();
   }, []);
   return (
-    <div className={"over active"}>
+    <div className={"over done active"}>
       <div className="haye">
         <div className="inhaye">
           <div className="login  Done">
@@ -33,8 +33,8 @@ const Done = ({ Total }) => {
               <audio ref={Shukran} src="/Media/Shukran.mp3" />
               {/* <Lottie animationData={animationData} /> */}
               <h2 className="comm done">
-                Mashalaah ! deqsinimadiina ayuu mashruucan ku dhamaaday
-                <span> {Total}$</span> Ayaad Ku deeqdeen
+                Mahadsanidiin deqsinimadiina ayuu mashruucan ku dhamaaday
+                <span> {Total}$</span> Ayaad Ku deeqdeen !
               </h2>
               <Link href="/">
                 <button className="comm">
