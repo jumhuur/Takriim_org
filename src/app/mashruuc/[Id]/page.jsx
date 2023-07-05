@@ -8,8 +8,8 @@ import Comming from "@/components/Comming";
 import Done from "@/components/Done";
 async function getData(Id) {
   const res = await fetch(`https://tabaruc.vercel.app/api/projects/${Id}`, {
-    next: { revalidate: 1 },
-    // cache: "no-store",
+    // next: { revalidate: 1 },
+    cache: "no-store",
   });
 
   if (!res.ok) {
@@ -91,9 +91,15 @@ async function MainPage({ params }) {
                 {info ? (
                   <div className="progress">
                     <span
-                      style={{
-                        width: `${(Total / info.Hadaf) * 100 + 5}%`,
-                      }}
+                      style={
+                        Total >= info?.Hadaf
+                          ? {
+                              width: `100%`,
+                            }
+                          : {
+                              width: `${(Total / info.Hadaf) * 100 + 5}%`,
+                            }
+                      }
                     >
                       <span>
                         {Math.floor((Number(Total) / info.Hadaf) * 100).toFixed(
