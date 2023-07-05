@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { format } from "timeago.js";
 import useSWR from "swr";
-import Skllast from "./Skeletons/SKLLAST";
+import Skllast from "./Skeletons/Skllast";
 // const GetData = async () => {
 //   const res = await fetch(
 //     "https://tabaruc.vercel.app/api/Tabaruc/getAll/lastDone",
