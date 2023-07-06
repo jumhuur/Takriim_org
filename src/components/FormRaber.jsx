@@ -312,7 +312,7 @@ const FromRaber = ({ info, Id, Total }) => {
                     </div>
                   </button>
                 )}
-                {CrentUser && CrentUser.Id === "6454dba1429d70970c9c0eff" ? (
+                {sesstion.data?.user.email === "www.somtel.com@gmail.com" ? (
                   <button className="bixi manually">
                     <Link href={`/manually/${info && info._id}`}>
                       <span>

@@ -23,8 +23,8 @@ async function GetTotal(Id) {
   const res = await fetch(
     `https://tabaruc.vercel.app/api/Tabaruc/getTotal/${Id}`,
     {
-      // next: { revalidate: 1 },
-      cache: "no-store",
+      next: { revalidate: 1 },
+      // cache: "no-store",
     }
   );
 
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-async function MainPage({ params }) {
+async function Menually({ params }) {
   const { Id } = params;
   // const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // const { data, error, isLoading } = useSWR(
@@ -132,4 +132,4 @@ async function MainPage({ params }) {
   );
 }
 
-export default MainPage;
+export default Menually;
