@@ -1,11 +1,9 @@
-import Video from "@/components/Video";
 import Topinfo from "@/components/Topinfo";
 import Provider from "@/components/Provide";
-import FromRaber from "@/components/FormRaber";
 import LastTabaruc from "@/components/lastTabaruc";
-import useSWR from "swr";
 import Comming from "@/components/Comming";
 import Done from "@/components/Done";
+import MenuallyFrom from "@/components/ManuallyFrom";
 async function getData(Id) {
   const res = await fetch(`https://tabaruc.vercel.app/api/projects/${Id}`, {
     // next: { revalidate: 1 },
@@ -41,12 +39,6 @@ export async function generateMetadata({ params }) {
 
 async function Menually({ params }) {
   const { Id } = params;
-  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  // const { data, error, isLoading } = useSWR(
-  //   `http://localhost:3000/api/projects/${Id}`,
-  //   fetcher
-  // );
-
   const info = await getData(Id);
   const lastTotal = await GetTotal(Id);
   const Total = lastTotal.length > 0 ? lastTotal[0].Total : 0;
@@ -61,7 +53,7 @@ async function Menually({ params }) {
             <div className="laba_qaybood">
               <div className="qayb muuqaal">
                 {/* <img src={info && info.Sawir} alt="mashruuc_sawir" /> */}
-                {info ? <Video Muuqaal={info.Muuqaal} /> : <></>}
+                {/* {info ? <Video Muuqaal={info.Muuqaal} /> : <></>} */}
                 <div className="macluumaad_bidix">
                   <div className="qoraal">
                     <h2>Macluumaadka Masharuuca</h2>
@@ -120,7 +112,7 @@ async function Menually({ params }) {
                     </h2>
                   </>
                 ) : (
-                  <FromRaber info={info} Id={Id} Total={Total} />
+                  <MenuallyFrom info={info} Id={Id} Total={Total} />
                 )}
               </div>
               <LastTabaruc Id={Id} />
