@@ -260,18 +260,6 @@ const MenuallyFrom = ({ info, Id, Total }) => {
                     </div>
                   </button>
                 )}
-                {sesstion.data?.user.email === "www.somtel.com@gmail.com" ? (
-                  <button className="bixi manually">
-                    <Link href={`/manually/${info && info._id}`}>
-                      <span>
-                        <i class="fa-solid fa-circle-plus"></i> Ku Dar Tabaruc
-                        (manually)
-                      </span>
-                    </Link>
-                  </button>
-                ) : (
-                  <></>
-                )}
               </div>
             </form>
           </main>
