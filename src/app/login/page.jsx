@@ -6,10 +6,13 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "../../../public/Images/130776-create-account.json";
+import { Auth } from "@/context/context";
 function Login() {
+  const { SetUser } = Auth();
   const { data: sesstion } = useSession();
   const router = useRouter();
   const [Loading, setloading] = useState(false);
+  const [Error, setError] = useState(false);
   if (sesstion?.user) {
     router.push("/");
   }
@@ -19,6 +22,39 @@ function Login() {
     Lanbar: "",
     Password: "",
   });
+
+  const LoginFrom = async (e) => {
+    e.preventDefault();
+    try {
+      setloading(true);
+      const Response = await fetch("/api/auth/login", {
+        method: "POST",
+        body: JSON.stringify(inputes),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!Response.ok) {
+        setloading(false);
+        setError(Response.statusText);
+      }
+
+      if (Response.ok) {
+        const data = await Response.json();
+        localStorage.setItem("User", JSON.stringify(data));
+        SetUser();
+        setloading(false);
+        router.push("/");
+      }
+
+      return Response;
+    } catch (Err) {
+      setError(Err.message);
+      setloading(false);
+      //console.log(Err.message);
+    }
+  };
 
   const LoginAction = () => {
     signIn("google");
@@ -30,8 +66,8 @@ function Login() {
     console.log(login);
   };
 
-  const Looding = false;
-  const Error = false;
+  // const Looding = false;
+  // const Error = false;
 
   const onchange_inputes = (e) => {
     setinputes((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -52,7 +88,7 @@ function Login() {
                     <i className="fa-solid fa-xmark"></i>
                   </Link>
                 </div>
-                <div className="from">
+                <form className="from" onSubmit={LoginFrom}>
                   <div className="dhinac_l Maclumo_login">
                     <h2>Gal Akoon</h2>
                     <p>Soo dhawaaw mar kale .</p>
@@ -64,6 +100,7 @@ function Login() {
                       placeholder="Lanbaraakaga"
                       autoComplete="off"
                       name="Lanbar"
+                      required
                     />
                     <input
                       onChange={onchange_inputes}
@@ -71,8 +108,9 @@ function Login() {
                       placeholder="Passwor-kaaga"
                       autoComplete="off"
                       name="Password"
+                      required
                     />
-                    {Looding ? (
+                    {Loading ? (
                       <button>
                         <div class="sk-circle">
                           <div class="sk-circle1 sk-child"></div>
@@ -133,7 +171,7 @@ function Login() {
                       <></>
                     )}
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
