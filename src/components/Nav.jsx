@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import MobileNav from "./NavMobile";
 import { useSession } from "next-auth/react";
 import { Auth } from "@/context/context";
-import Lottie from "lottie-react";
-import animationData from "../../public/images/122224-profile-avatar-of-older-man.json";
+// import Lottie from "lottie-react";
+// import animationData from "../../public/images/122224-profile-avatar-of-older-man.json";
 function Nav() {
   const { User } = Auth();
   const sesstion = useSession();
