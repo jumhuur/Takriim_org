@@ -29,7 +29,12 @@ export const POST = async (request) => {
     const Token = CreateToken(User._id);
     //console.log(Token);
     return new NextResponse(
-      JSON.stringify({ Magac: User.Magac, Lanbar: User.Lanbar, Id: User._id }),
+      JSON.stringify({
+        Magac: User.Magac,
+        Lanbar: User.Lanbar,
+        Id: User._id,
+        Token,
+      }),
       {
         status: 200,
       }

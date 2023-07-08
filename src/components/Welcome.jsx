@@ -4,8 +4,10 @@ import Lottie from "lottie-react";
 // import animationData from "../../public/images/70897-online-payments.json";
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
+import { Auth } from "@/context/context";
 function Welcome() {
   const sesstion = useSession();
+  const { User } = Auth();
   const Logout = () => {
     signOut("google");
   };
@@ -14,11 +16,11 @@ function Welcome() {
       <div className="haye">
         <div className="labaqaybood">
           <div className="qayb qorall">
-            {sesstion?.status === "authenticated" ? (
+            {User ? (
               <>
                 <h2>
-                  <span className="name">{sesstion.data.user.name}</span> Ku soo
-                  Dhawoow Shabakada Taysiir.
+                  <span className="name">{User.Magac}</span> Ku soo Dhawoow
+                  Shabakada Taysiir.
                 </h2>
                 <p>
                   Taysiir waa shabakada Loogu tallo gallay Ururinta Muwaacanida
@@ -27,6 +29,7 @@ function Welcome() {
               </>
             ) : (
               <>
+                (
                 <h2>
                   Ku soo Dhawaaw
                   <br /> Shabakada

@@ -4,11 +4,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
+import { Auth } from "@/context/context";
 
 function Register() {
   const route = useRouter();
+  const { SetUser, User } = Auth();
   const { data: sesstion } = useSession();
-  if (sesstion?.user) {
+  if (User || sesstion?.user) {
     route.push("/");
   }
   const [inputes, setinputes] = useState({
@@ -20,38 +22,42 @@ function Register() {
   const [Looding, setLooding] = useState(false);
   const [Error, setError] = useState(false);
 
-  // const Resgister = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     setLooding(true);
-  //     const res = await fetch("http://localhost:3000/api/auth/register", {
-  //       method: "POST",
-  //       body: JSON.stringify(inputes),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
+  const Resgister = async (e) => {
+    e.preventDefault();
+    try {
+      setLooding(true);
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        body: JSON.stringify(inputes),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!res.ok) {
+        setLooding(false);
+        setError(res.statusText);
+        console.log(res);
+      }
 
-  //     if (res.ok) {
-  //       setLooding(false);
-  //       route.push("/");
-  //     }
-  //     if (!res.ok) {
-  //       setLooding(false);
-  //       setError(res.statusText);
-  //     }
-  //     return res;
-  //   } catch (Err) {
-  //     setError(false);
-  //   }
-  // };
+      if (res.ok) {
+        const Info = await res.json();
+        setLooding(false);
+        localStorage.setItem("User", JSON.stringify(Info));
+        SetUser();
+        route.push("/");
+      }
+      return res;
+    } catch (Err) {
+      //setError(Err);
+      console.log(res);
+    }
+  };
 
   // const Looding = false;
   // const Error = false;
 
   const onchange_inputes = (e) => {
     setinputes((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    console.log(inputes);
   };
 
   // const { register, Looding, Error } = UseRegister();
@@ -61,9 +67,9 @@ function Register() {
   //   redirect("/");
   // };
 
-  const RegisterAction = () => {
-    console.log("RegisterAction");
-  };
+  // const RegisterAction = () => {
+  //   console.log("RegisterAction");
+  // };
 
   return (
     <>
@@ -80,7 +86,7 @@ function Register() {
                     <i className="fa-solid fa-xmark"></i>
                   </Link>
                 </div>
-                <form className="from">
+                <form className="from" onSubmit={Resgister}>
                   <div className="dhinac_l Maclumo_login">
                     <h2>Samayso Akoon</h2>
                     <p>Ku samayso akoon daqiiqad Gudaheed.</p>
@@ -117,7 +123,7 @@ function Register() {
                       hidden
                     />
                     {!Looding ? (
-                      <button type={"submit"} onClick={RegisterAction}>
+                      <button type={"submit"}>
                         <i className="fa-solid fa-user-plus"></i> Samayso
                       </button>
                     ) : (
