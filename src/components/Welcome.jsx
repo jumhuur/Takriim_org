@@ -7,9 +7,13 @@ import { useSession, signOut } from "next-auth/react";
 import { Auth } from "@/context/context";
 function Welcome() {
   const sesstion = useSession();
-  const { User } = Auth();
+  const { User, MyLogout } = Auth();
   const Logout = () => {
     signOut("google");
+  };
+
+  const fromLogout = () => {
+    MyLogout();
   };
   return (
     <div className="welcome">
@@ -19,8 +23,9 @@ function Welcome() {
             {User ? (
               <>
                 <h2>
-                  <span className="name">{User.Magac}</span> Ku soo Dhawoow
-                  Shabakada Taysiir.
+                  <span className="name">{User.Magac}</span>
+                  <br />
+                  Ku soo Dhawoow Shabakada Taysiir.
                 </h2>
                 <p>
                   Taysiir waa shabakada Loogu tallo gallay Ururinta Muwaacanida
@@ -44,6 +49,11 @@ function Welcome() {
             <div className="btn-welc">
               {sesstion.status === "authenticated" ? (
                 <button className="samayso" onClick={Logout}>
+                  <i className="fa-solid fa-right-from-bracket"></i> Xidho
+                  Akoonka
+                </button>
+              ) : User ? (
+                <button className="samayso" onClick={fromLogout}>
                   <i className="fa-solid fa-right-from-bracket"></i> Xidho
                   Akoonka
                 </button>

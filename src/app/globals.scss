@@ -1435,6 +1435,29 @@ div.over {
                 }
               }
 
+              div.orline {
+                width: 85%;
+                height: 1px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: wrap column;
+                background-color: $qoraalo-color;
+                margin: 15px 0px;
+                border-radius: 5px;
+                span {
+                  width: 15%;
+                  height: 20px;
+                  background-color: $bg-main;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-flow: wrap column;
+                  padding: 5px 0px;
+                  border-radius: 5px;
+                }
+              }
+
               p.Bilaa_akoon {
                 margin-top: 15px;
                 font-size: 17px;

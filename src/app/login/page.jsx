@@ -8,12 +8,13 @@ import Lottie from "lottie-react";
 import animationData from "../../../public/Images/130776-create-account.json";
 import { Auth } from "@/context/context";
 function Login() {
-  const { SetUser } = Auth();
+  const { SetUser, User } = Auth();
   const { data: sesstion } = useSession();
   const router = useRouter();
   const [Loading, setloading] = useState(false);
+  const [LoadingG, setloadingG] = useState(false);
   const [Error, setError] = useState(false);
-  if (sesstion?.user) {
+  if (sesstion?.user || User) {
     router.push("/");
   }
 
@@ -58,7 +59,7 @@ function Login() {
 
   const LoginAction = () => {
     signIn("google");
-    setloading(true);
+    setloadingG(true);
   };
 
   const Loginfunc = () => {
@@ -133,7 +134,11 @@ function Login() {
                         <i className="fa-solid fa-arrow-right-to-bracket"></i>
                       </button>
                     )}
-                    {Loading ? (
+
+                    <div className="orline">
+                      <span>Ama</span>
+                    </div>
+                    {LoadingG ? (
                       <button className="Google">
                         <div class="sk-circle">
                           <div class="sk-circle1 sk-child"></div>

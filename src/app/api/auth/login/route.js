@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 import Jwt from "jsonwebtoken";
 export const POST = async (request) => {
-  //   const pattern = /[^0-9]/g;
+  const pattern = /[^0-9]/g;
 
   const CreateToken = (_id) => {
     return Jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
@@ -17,6 +17,13 @@ export const POST = async (request) => {
       return new NextResponse("Labada Meeloodba Buuxi", {
         status: 400,
         statusText: "Labada Meeloodba Buuxi",
+      });
+    }
+
+    if (Lanbar.match(pattern)) {
+      return new NextResponse("Waxaad Qortay Lanbar Maaha", {
+        status: 400,
+        statusText: "Waxaad Qortay Lanbar Maaha",
       });
     }
     const User = await isticmaale.findOne({ Lanbar });

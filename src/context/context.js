@@ -12,6 +12,11 @@ export const ContextProvider = ({ children }) => {
     setUser(JSON.parse(localStorage.getItem("User") || null));
   }, []);
 
+  const MyLogout = () => {
+    localStorage.removeItem("User");
+    setUser(JSON.parse(localStorage.getItem("User") || null));
+  };
+
   const SetUser = () => {
     setUser(JSON.parse(localStorage.getItem("User") || null));
   };
@@ -19,6 +24,7 @@ export const ContextProvider = ({ children }) => {
   const value = {
     User,
     SetUser,
+    MyLogout,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

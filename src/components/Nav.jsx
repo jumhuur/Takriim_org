@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import MobileNav from "./NavMobile";
 import { useSession } from "next-auth/react";
-// import { NextNProgress } from "nextjs-progressbar";
+import { Auth } from "@/context/context";
+import Lottie from "lottie-react";
+import animationData from "../../public/images/122224-profile-avatar-of-older-man.json";
 function Nav() {
+  const { User } = Auth();
   const sesstion = useSession();
   // states
   const [Activemobile, setActivemobile] = useState(false);
@@ -105,6 +108,22 @@ function Nav() {
                       </div>
                     </span>
                     <span>{sesstion.data.user.name}</span>
+                  </button>
+                </>
+              ) : User ? (
+                <>
+                  <button className="nav-btn" onClick={Loginfunc}>
+                    <span className="user_image">
+                      <div className="image">
+                        <Image
+                          src="/Images/User_line.png"
+                          fill={true}
+                          alt="sesstion.data.user.image"
+                        />
+                        {/* <Lottie animationData={animationData} /> */}
+                      </div>
+                    </span>
+                    <span>{User.Magac}</span>
                   </button>
                 </>
               ) : (

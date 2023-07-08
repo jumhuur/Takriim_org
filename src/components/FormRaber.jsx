@@ -8,13 +8,26 @@ import Alert from "./Alert";
 import { useSession } from "next-auth/react";
 import animationData from "../../public/Images/104785-done";
 import animationData2 from "../../public/Images/103831-circle-x";
+import { Auth } from "@/context/context";
 const FromRaber = ({ info, Id, Total }) => {
+  const { User } = Auth();
   const sesstion = useSession();
-  const CrentUser =
-    sesstion.status === "authenticated" ? sesstion.data.user : "";
+  let CrentUser = "";
+  let Tabaruce = !CrentUser && "Ixsan2023";
+  let Name = !CrentUser && "Deeq Bixiye";
+  if (sesstion.status === "authenticated") {
+    CrentUser = sesstion && sesstion.data.user;
+    Tabaruce = CrentUser ? CrentUser.email : "Ixsan2023";
+    Name = CrentUser ? CrentUser.name : "Deeq Bixiye";
+  } else if (User) {
+    CrentUser = User;
+    Tabaruce = CrentUser ? CrentUser.Lanbar : "Ixsan2023";
+    Name = CrentUser ? CrentUser.Magac : "Deeq Bixiye";
+  }
+
+  // const CrentUser =
+  //   sesstion.status === "authenticated" ? sesstion.data.user : "";
   const UserLanbar = CrentUser && "";
-  const Tabaruce = CrentUser ? CrentUser.email : "Ixsan2023";
-  const Name = CrentUser ? CrentUser.name : "Deeq Bixiye";
   const [Pyment_type, setPyment_type] = useState("zaad");
   const [Looding, setLooding] = useState(false);
   const [wait, setwait] = useState(false);
