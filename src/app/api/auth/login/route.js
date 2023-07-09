@@ -13,17 +13,16 @@ export const POST = async (request) => {
   try {
     await conectdb();
     if (!Lanbar || !Password) {
-      //throw new Error("Labada Meeloodba Buuxi");
+      //throw Error("Labada Meeloodba Buuxi");
       return new NextResponse("Labada Meeloodba Buuxi", {
         status: 400,
-        statusText: "Labada Meeloodba Buuxi",
       });
     }
 
     if (Lanbar.match(pattern)) {
+      //throw Error("Fdlan Istimaal Lanbar");
       return new NextResponse("Waxaad Qortay Lanbar Maaha", {
         status: 400,
-        statusText: "Waxaad Qortay Lanbar Maaha",
       });
     }
     const User = await isticmaale.findOne({ Lanbar });
@@ -31,7 +30,6 @@ export const POST = async (request) => {
       //throw Error("Lanbarkan Ma Diwaan Gashana");
       return new NextResponse("Lanbarkan Ma Diwaan Gashana", {
         status: 400,
-        statusText: "Lanbarkan Ma Diwaan Gashana",
       });
     }
 
@@ -40,7 +38,6 @@ export const POST = async (request) => {
       //throw Error("Password-kaagu Waa Qalad");
       return new NextResponse("Password-ku waa Qalad", {
         status: 400,
-        statusText: "Password-ku waa Qalad",
       });
     }
 
@@ -55,9 +52,9 @@ export const POST = async (request) => {
       { status: 200 }
     );
   } catch (Err) {
+    // Response.status(400).json({ Err: Err.message });
     return new NextResponse(Err.message, {
       status: 400,
-      statusText: Err.message,
     });
   }
 };

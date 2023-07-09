@@ -34,7 +34,6 @@ function Welcome() {
               </>
             ) : (
               <>
-                (
                 <h2>
                   Ku soo Dhawaaw
                   <br /> Shabakada

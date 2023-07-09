@@ -36,11 +36,6 @@ function Login() {
         },
       });
 
-      if (!Response.ok) {
-        setloading(false);
-        setError(Response.statusText);
-      }
-
       if (Response.ok) {
         const data = await Response.json();
         localStorage.setItem("User", JSON.stringify(data));
@@ -49,11 +44,19 @@ function Login() {
         router.push("/");
       }
 
+      if (!Response.ok) {
+        // const data = await Response.json();
+        setloading(false);
+        setError(true);
+        //console.log(data);
+      }
+      ///const data = await Response.json();
       return Response;
     } catch (Err) {
-      setError(Err.message);
+      setError(true);
       setloading(false);
-      //console.log(Err.message);
+      console.log(Err);
+      console.log(Response);
     }
   };
 
