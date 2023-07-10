@@ -32,6 +32,18 @@ function Welcome() {
                   dadka baahan.
                 </p>
               </>
+            ) : sesstion?.status === "authenticated" ? (
+              <>
+                <h2>
+                  <span className="name">{sesstion.data.user.name}</span>
+                  <br />
+                  Ku soo Dhawoow Shabakada Taysiir.
+                </h2>
+                <p>
+                  Taysiir waa shabakada Loogu tallo gallay Ururinta Muwaacanida
+                  dadka baahan.
+                </p>
+              </>
             ) : (
               <>
                 <h2>
