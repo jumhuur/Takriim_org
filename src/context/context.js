@@ -12,15 +12,14 @@ export const ContextProvider = ({ children }) => {
     setUser(JSON.parse(localStorage.getItem("User") || null));
   }, []);
 
-  const MyLogout = () => {
-    localStorage.removeItem("User");
-    setUser(JSON.parse(localStorage.getItem("User") || null));
-  };
-
   const SetUser = () => {
     setUser(JSON.parse(localStorage.getItem("User") || null));
   };
-  console.log(User);
+
+  const MyLogout = () => {
+    localStorage.removeItem("User");
+    SetUser();
+  };
   const value = {
     User,
     SetUser,

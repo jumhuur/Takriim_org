@@ -1,10 +1,12 @@
 "use client";
+import { Auth } from "@/context/context";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
 function MobileNav({ Login }) {
   const sesstion = useSession();
+  const { User } = Auth();
   const CrentUser = {
     Magac: "maxamad",
     Id: "6454dba1429d70970c9c0eff",
@@ -50,6 +52,19 @@ function MobileNav({ Login }) {
                     </div>
                   </span>
                   <span>{sesstion.data.user.name}</span>
+                </button>
+              ) : User ? (
+                <button className="nav-btn mb">
+                  <span className="user_image">
+                    <div className="image">
+                      <Image
+                        src="/Images/User_line.png"
+                        fill={true}
+                        alt="sesstion.data.user.image"
+                      />
+                    </div>
+                  </span>
+                  <span>{User.Magac}</span>
                 </button>
               ) : (
                 <button className="nav-btn out">
