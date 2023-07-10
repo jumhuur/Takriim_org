@@ -13,32 +13,32 @@ export const POST = async (request) => {
   try {
     await conectdb();
     if (!Lanbar || !Password) {
-      //throw Error("Labada Meeloodba Buuxi");
-      return new NextResponse("Labada Meeloodba Buuxi", {
-        status: 400,
-      });
+      throw Error("Labada Meeloodba Buuxi");
+      // return new NextResponse("Labada Meeloodba Buuxi", {
+      //   status: 400,
+      // });
     }
 
     if (Lanbar.match(pattern)) {
-      //throw Error("Fdlan Istimaal Lanbar");
-      return new NextResponse("Waxaad Qortay Lanbar Maaha", {
-        status: 400,
-      });
+      throw Error("Fdlan Istimaal Lanbar");
+      // return new NextResponse("Waxaad Qortay Lanbar Maaha", {
+      //   status: 400,
+      // });
     }
     const User = await isticmaale.findOne({ Lanbar });
     if (!User) {
-      //throw Error("Lanbarkan Ma Diwaan Gashana");
-      return new NextResponse("Lanbarkan Ma Diwaan Gashana", {
-        status: 400,
-      });
+      throw Error("Lanbarkan Ma Diwaan Gashana");
+      // return new NextResponse("Lanbarkan Ma Diwaan Gashana", {
+      //   status: 400,
+      // });
     }
 
     const compare = await bcrypt.compare(Password, User.Password);
     if (!compare) {
-      //throw Error("Password-kaagu Waa Qalad");
-      return new NextResponse("Password-ku waa Qalad", {
-        status: 400,
-      });
+      throw Error("Password-kaagu Waa Qalad");
+      // return new NextResponse("Password-ku waa Qalad", {
+      //   status: 400,
+      // });
     }
 
     const Token = CreateToken(User._id);
@@ -53,7 +53,7 @@ export const POST = async (request) => {
     );
   } catch (Err) {
     // Response.status(400).json({ Err: Err.message });
-    return new NextResponse(Err.message, {
+    return new NextResponse(JSON.stringify({ Error: Err.message }), {
       status: 400,
     });
   }

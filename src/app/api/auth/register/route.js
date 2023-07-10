@@ -40,9 +40,8 @@ export const POST = async (request) => {
       }
     );
   } catch (Err) {
-    return new NextResponse(Err.message, {
+    return new NextResponse(JSON.stringify({ Error: Err.message }), {
       status: 400,
-      statusText: Err.message,
     });
   }
 };
