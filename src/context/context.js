@@ -47,6 +47,7 @@ export const ContextProvider = ({ children }) => {
     SetUser,
     MyLogout,
     state,
+    GetAll,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
