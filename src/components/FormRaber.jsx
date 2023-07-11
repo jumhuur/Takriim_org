@@ -334,6 +334,15 @@ const FromRaber = ({ info, Id, Total }) => {
                       </span>
                     </Link>
                   </button>
+                ) : User && User.Lanbar === "4645195" ? (
+                  <button className="bixi manually">
+                    <Link href={`/manually/${info && info._id}`}>
+                      <span>
+                        <i class="fa-solid fa-circle-plus"></i> Ku Dar Tabaruc
+                        (manually)
+                      </span>
+                    </Link>
+                  </button>
                 ) : (
                   <></>
                 )}

@@ -468,6 +468,24 @@ div.nav {
   }
 }
 
+div.Drop_nav_lang {
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  background-color: $main-color2;
+  top: 96px;
+  border-radius: 5px;
+  @include dynamic-flex(center, center, column, 0px);
+  visibility: hidden;
+  div.lang {
+    width: 100%;
+    background-color: $dark_main2;
+    padding: 5px 0px;
+    @include dynamic-flex(center, center, column, 0px);
+    margin: 5px 0px;
+  }
+}
+
 // homepage welcome
 div.welcome {
   width: 100%;

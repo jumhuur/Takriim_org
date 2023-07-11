@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { format } from "timeago.js";
 import useSWR from "swr";
 import Skllast from "./Skeletons/Skllast";
+import { Auth } from "@/context/context";
 // const GetData = async () => {
 //   const res = await fetch(
 //     "https://tabaruc.vercel.app/api/Tabaruc/getAll/lastDone",
@@ -20,19 +21,19 @@ import Skllast from "./Skeletons/Skllast";
 
 function Fqa() {
   const [last, setlast] = useState(null);
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const {
-    data: lasnone,
-    mutate,
-    error,
-    isLoading,
-  } = useSWR(`/api/Tabaruc/getAll/lastDone`, fetcher);
+  const { state } = Auth();
+  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  // const {
+  //   data: lasnone,
+  //   mutate,
+  //   error,
+  //   isLoading,
+  // } = useSWR(`/api/Tabaruc/getAll/lastDone`, fetcher);
 
-  mutate();
   useEffect(() => {
-    mutate();
-    setlast(lasnone && lasnone[0]);
-  }, [mutate, lasnone]);
+    //mutate();
+    setlast(state && state.Data);
+  }, [state]);
 
   // const lasnone = await GetData();
   return (
@@ -112,9 +113,9 @@ function Fqa() {
               </div>
               {last ? (
                 <button className="start_btn_faq">
-                  <i class="fa-solid fa-wallet"></i> {lasnone[0].Lacagta} ${" "}
+                  <i class="fa-solid fa-wallet"></i> {last[0].Lacagta} ${" "}
                   <i class="fa-regular fa-clock"></i>{" "}
-                  {format(lasnone[0].createdAt)}
+                  {format(last[0].createdAt)}
                 </button>
               ) : (
                 <Skllast />

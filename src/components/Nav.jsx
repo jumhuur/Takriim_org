@@ -85,8 +85,15 @@ function Nav() {
                     <i className="fa-solid fa-earth-africa"></i> So{" "}
                     <i className="fa-solid fa-chevron-down"></i>
                   </span>
+                  <div className="Drop_nav_lang">
+                    <div className="lang">
+                      <span>So</span>
+                    </div>
+                    <div className="lang">
+                      <span>Ar</span>
+                    </div>
+                  </div>
                 </li>
-                <li></li>
               </ul>
             </div>
             <div className="Mobilee">

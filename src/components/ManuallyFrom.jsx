@@ -240,7 +240,7 @@ const MenuallyFrom = ({ info, Id, Total }) => {
                 </div>
                 {!Looding ? (
                   <button className={"bixi"}>
-                    <i className="fa-solid fa-paper-plane"></i> Bixi Hada
+                    <i className="fa-solid fa-paper-plane"></i> Ku Dar
                   </button>
                 ) : (
                   <button className={"bixi"}>
