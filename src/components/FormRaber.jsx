@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 import animationData from "../../public/Images/104785-done";
 import animationData2 from "../../public/Images/103831-circle-x";
 import { Auth } from "@/context/context";
-const FromRaber = ({ info, Id, Total }) => {
+const FromRaber = ({ info, Id, Total, GetNewData }) => {
   const { User, GetAll } = Auth();
   const sesstion = useSession();
   let CrentUser = "";
@@ -90,6 +90,7 @@ const FromRaber = ({ info, Id, Total }) => {
       if (AddTabaruc.ok) {
         UpdateAction();
         GetAll();
+        GetNewData();
       }
       setLooding(false);
       return AddTabaruc;
@@ -121,18 +122,18 @@ const FromRaber = ({ info, Id, Total }) => {
               // tani sax maaha
               console.log(data.responseMsg);
               //Qaybta saxda ayaa leh  Lakiin tijaabo ahaan ayaan halkan ugu qoray
-              // AddTabaruc();
-              // setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
-              // setimg(animationData);
-              // setcln("Sax");
-              // setwait(0);
-              // setLooding(false);
-              //Qaybta qaladka ah
-              setmsg("USER_API_IS_NOT_ACTIVE");
-              setimg(animationData2);
-              setcln("Qalad");
+              AddTabaruc();
+              setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);
+              setimg(animationData);
+              setcln("Sax");
               setwait(0);
               setLooding(false);
+              //Qaybta qaladka ah
+              // setmsg("USER_API_IS_NOT_ACTIVE");
+              // setimg(animationData2);
+              // setcln("Qalad");
+              // setwait(0);
+              // setLooding(false);
             } else {
               AddTabaruc();
               setmsg(`Mahadsanid ${fildes.Lacagta} $ Ayaad Bixisay`);

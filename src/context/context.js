@@ -16,7 +16,9 @@ export const ContextProvider = ({ children }) => {
   // functions
   const GetAll = async () => {
     // last tabaruc
-    const LTabaruc = await fetch("/api/Tabaruc/getAll/lastDone");
+    const LTabaruc = await fetch("/api/Tabaruc/getAll/lastDone", {
+      cache: "no-store",
+    });
     const LasttabarucRes = await LTabaruc.json();
     if (LTabaruc.ok) {
       dispatch({ type: ACTIONS.GET_DATA, payload: LasttabarucRes });

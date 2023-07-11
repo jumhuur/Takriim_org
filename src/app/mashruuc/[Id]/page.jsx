@@ -50,6 +50,10 @@ async function MainPage({ params }) {
   const info = await getData(Id);
   const lastTotal = await GetTotal(Id);
   const Total = lastTotal.length > 0 ? lastTotal[0].Total : 0;
+
+  // const GetNewData = async () => {
+  //   await getData(Id);
+  // };
   return (
     <>
       {Total >= info?.Hadaf && <Done Total={Total} />}
