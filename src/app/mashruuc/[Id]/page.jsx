@@ -3,16 +3,12 @@ import Topinfo from "@/components/Topinfo";
 import Provider from "@/components/Provide";
 import FromRaber from "@/components/FormRaber";
 import LastTabaruc from "@/components/lastTabaruc";
-import useSWR from "swr";
+//import useSWR from "swr";
 import Comming from "@/components/Comming";
 import Done from "@/components/Done";
 async function getData(Id) {
   const res = await fetch(`https://tabaruc.vercel.app/api/projects/${Id}`, {
-    // next: { revalidate: 1 },
     cache: "no-store",
-    next: {
-      tags: ["response"],
-    },
   });
 
   if (!res.ok) {
@@ -26,7 +22,6 @@ async function GetTotal(Id) {
   const res = await fetch(
     `https://tabaruc.vercel.app/api/Tabaruc/getTotal/${Id}`,
     {
-      // next: { revalidate: 1 },
       cache: "no-store",
     }
   );

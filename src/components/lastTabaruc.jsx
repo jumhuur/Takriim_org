@@ -1,4 +1,3 @@
-import { revalidateTag } from "next/cache";
 import EmpatyTabaruc from "./EmpatyTabaruc";
 import { format } from "timeago.js";
 // import Lottie from "lottie-react";
@@ -8,9 +7,6 @@ async function getTabaruc(Id) {
     `https://tabaruc.vercel.app/api/Tabaruc/proTabarucyo/${Id}`,
     {
       cache: "no-store",
-      next: {
-        tags: ["res1"],
-      },
     }
   );
 
