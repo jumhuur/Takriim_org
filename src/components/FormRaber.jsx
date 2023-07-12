@@ -84,9 +84,6 @@ const FromRaber = ({ info, Id, Total }) => {
   const AddTabaruc = async () => {
     try {
       const AddTabaruc = await fetch("/api/Tabaruc/addTabaruc", {
-        next: {
-          tags: ["AddTabaruc"],
-        },
         method: "POST",
         body: JSON.stringify(fildesTabaruc),
         headers: {
