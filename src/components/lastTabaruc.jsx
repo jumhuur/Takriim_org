@@ -31,9 +31,12 @@ async function GetCount(Id) {
 }
 
 async function topDonote(Id) {
-  const response = await fetch(`http://127.0.0.1:3000/api/Tabaruc/top/${Id}`, {
-    cache: "no-store",
-  });
+  const response = await fetch(
+    `https://tabaruc.vercel.app/api/Tabaruc/top/${Id}`,
+    {
+      cache: "no-store",
+    }
+  );
 
   if (!response.ok) {
     throw new Error("NOT FOUND !");

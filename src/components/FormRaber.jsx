@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 // import useSWR from "swr";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import evc from "evc-api";
 import AlertSax from "./AlertSax";
 import Alert from "./Alert";
@@ -9,7 +9,6 @@ import { useSession } from "next-auth/react";
 import animationData from "../../public/Images/104785-done";
 import animationData2 from "../../public/Images/103831-circle-x";
 import { Auth } from "@/context/context";
-import { revalidateTag } from "next/cache";
 const FromRaber = ({ info, Id, Total }) => {
   const { User, GetAll } = Auth();
   const sesstion = useSession();
