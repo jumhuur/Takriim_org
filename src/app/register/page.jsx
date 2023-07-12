@@ -58,6 +58,7 @@ function Register() {
 
   const onchange_inputes = (e) => {
     setinputes((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setError(false);
   };
 
   // const { register, Looding, Error } = UseRegister();

@@ -1942,31 +1942,33 @@ div.laba_qaybood {
               // switch
 
               div.raber_switcher {
-                width: 70%;
+                width: 100%;
                 margin: 10px 0px;
                 @include dynamic-flex(flex-start, center, row, 0px);
 
                 div.input {
+                  height: 40px;
                   position: relative;
+                  border-radius: 25px;
                   width: 100%;
                   @include dynamic-flex(center, center, row, 0px);
                   overflow: hidden;
+                  background-color: $btn_gaar;
 
                   input {
                     width: 100%;
-                    height: 40px;
                     border-radius: 25px;
-                    background-color: $btn_gaar;
+                    background-color: transparent;
                     appearance: none;
                     outline: none;
                     position: relative;
                   }
 
                   label {
-                    width: 35%;
+                    width: calc(98% / 4);
                     height: 100%;
                     border-radius: 25px;
-                    position: absolute;
+                    //position: absolute;
                     z-index: 12;
                     overflow: hidden;
                     @include dynamic-flex(center, center, row, 0px);
@@ -1982,13 +1984,7 @@ div.laba_qaybood {
                       }
                     }
 
-                    &.edahab {
-                      right: 0;
-                      background-color: transparent;
-                    }
-
-                    &.zaad {
-                      left: 0px;
+                    &.Type {
                       background-color: transparent;
                     }
 
@@ -2343,6 +2339,23 @@ div.addPro {
   //   width: 100%;
   // }
 
+  div.laba_qaybood div.qayb.muuqaal div.info_fursad div.from_bixin {
+    width: 100%;
+  }
+
+  div.laba_qaybood
+    div.qayb.muuqaal
+    div.info_fursad
+    div.from_bixin
+    form
+    div.pyment_types
+    div.raber_switcher
+    div.input
+    label
+    span {
+    font-size: 13px;
+  }
+
   div.over_alert {
     height: 260px;
   }
@@ -2504,6 +2517,21 @@ div.addPro {
   }
   .xajiye {
     max-width: 540px;
+  }
+  div.laba_qaybood div.qayb.muuqaal div.info_fursad div.from_bixin {
+    width: 100%;
+  }
+  div.laba_qaybood
+    div.qayb.muuqaal
+    div.info_fursad
+    div.from_bixin
+    form
+    div.pyment_types
+    div.raber_switcher
+    div.input
+    label
+    span {
+    font-size: 13px;
   }
 
   div.faq div.suaalo div.btn_start button {

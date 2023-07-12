@@ -10,6 +10,9 @@ async function getData(Id) {
   const res = await fetch(`https://tabaruc.vercel.app/api/projects/${Id}`, {
     // next: { revalidate: 1 },
     cache: "no-store",
+    next: {
+      tags: ["response"],
+    },
   });
 
   if (!res.ok) {

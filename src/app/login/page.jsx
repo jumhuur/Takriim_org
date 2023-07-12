@@ -71,6 +71,7 @@ function Login() {
 
   const onchange_inputes = (e) => {
     setinputes((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setError(false);
   };
   return (
     <>

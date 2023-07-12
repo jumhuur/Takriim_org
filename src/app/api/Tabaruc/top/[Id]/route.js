@@ -9,8 +9,8 @@ export const GET = async (Request, { params }) => {
     await conectdb();
     const res = await nextTabaruc
       .find({ Id: Id })
-      .sort({ createdAt: -1 })
-      .limit(5);
+      .sort({ Lacagta: -1 })
+      .limit(3);
     return new NextResponse(JSON.stringify(res), { status: 200 });
   } catch (Err) {
     console.log(Err);

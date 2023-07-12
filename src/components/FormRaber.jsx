@@ -9,7 +9,8 @@ import { useSession } from "next-auth/react";
 import animationData from "../../public/Images/104785-done";
 import animationData2 from "../../public/Images/103831-circle-x";
 import { Auth } from "@/context/context";
-const FromRaber = ({ info, Id, Total, GetNewData }) => {
+import { revalidateTag } from "next/cache";
+const FromRaber = ({ info, Id, Total }) => {
   const { User, GetAll } = Auth();
   const sesstion = useSession();
   let CrentUser = "";
@@ -29,6 +30,7 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
   //   sesstion.status === "authenticated" ? sesstion.data.user : "";
   const UserLanbar = CrentUser && "";
   const [Pyment_type, setPyment_type] = useState("zaad");
+  const [CodeType, setCodeType] = useState("63");
   const [Looding, setLooding] = useState(false);
   const [wait, setwait] = useState(false);
   // const [total, settotal] = useState(0);
@@ -53,7 +55,8 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
 
   const Somtel = "65";
   const telesom = "63";
-  const Evc = "252";
+  const Evc = "61";
+  const Sahal = "90";
   const pattern = /[^0-9]/g;
   const LacagReg = /[^0-9.]/g;
 
@@ -81,6 +84,9 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
   const AddTabaruc = async () => {
     try {
       const AddTabaruc = await fetch("/api/Tabaruc/addTabaruc", {
+        next: {
+          tags: ["AddTabaruc"],
+        },
         method: "POST",
         body: JSON.stringify(fildesTabaruc),
         headers: {
@@ -90,7 +96,6 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
       if (AddTabaruc.ok) {
         UpdateAction();
         GetAll();
-        GetNewData();
       }
       setLooding(false);
       return AddTabaruc;
@@ -104,14 +109,18 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
     setmsg("Fadlan Telefankaaga Eeg");
     setwait(true);
     setLooding(true);
-    if (Pyment_type === "zaad" || Pyment_type === "Evc") {
+    if (
+      Pyment_type === "zaad" ||
+      Pyment_type === "Evc" ||
+      Pyment_type === "Sahal"
+    ) {
       // telesom action
       const telesom = () => {
         evc({
           merchantUId: "M0912269",
           apiUserId: "1000297",
           apiKey: "API-1901083745AHX",
-          customerMobileNumber: "25263" + fildes.Lanbar,
+          customerMobileNumber: `252${CodeType}` + fildes.Lanbar,
           description: "description.......",
           amount: String(fildes.Lacagta),
           autoWithdraw: true, // `true` if auto withdraw else `false`
@@ -169,12 +178,19 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
 
   const toggale_zaad = (e) => {
     setPyment_type("zaad");
+    setCodeType(telesom);
   };
   const toggale_edahab = (e) => {
     setPyment_type("edahab");
+    setCodeType(Somtel);
   };
   const toggale_Evc = (e) => {
     setPyment_type("Evc");
+    setCodeType(Evc);
+  };
+  const toggale_Sahal = (e) => {
+    setPyment_type("Sahal");
+    setCodeType(Sahal);
   };
   return (
     <>
@@ -191,8 +207,9 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
                     <label
                       onClick={toggale_zaad}
                       className={
-                        Pyment_type === "zaad" ? "zaad active" : "zaad"
+                        Pyment_type === "zaad" ? "zaad active" : "zaad Type"
                       }
+                      id="Type"
                     >
                       <span>
                         <i className="fa-solid fa-circle-check"></i> Zaad
@@ -201,8 +218,11 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
                     <label
                       onClick={toggale_edahab}
                       className={
-                        Pyment_type === "edahab" ? "edahab active" : "edahab"
+                        Pyment_type === "edahab"
+                          ? "edahab active"
+                          : "edahab Type"
                       }
+                      id="Type"
                     >
                       <span>
                         <i className="fa-solid fa-circle-check"></i> edahab
@@ -210,10 +230,23 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
                     </label>
                     <label
                       onClick={toggale_Evc}
-                      className={Pyment_type === "Evc" ? "Evc active" : "Evc"}
+                      className={
+                        Pyment_type === "Evc" ? "Evc active" : "Evc Type"
+                      }
                     >
                       <span>
                         <i className="fa-solid fa-circle-check"></i> Evc
+                      </span>
+                    </label>
+                    <label
+                      onClick={toggale_Sahal}
+                      className={
+                        Pyment_type === "Sahal" ? "Sahal active" : "Sahal Type"
+                      }
+                      id="Type"
+                    >
+                      <span>
+                        <i className="fa-solid fa-circle-check"></i> Sahal
                       </span>
                     </label>
                     <input type="checkbox" name="payment" value={Pyment_type} />
@@ -237,11 +270,13 @@ const FromRaber = ({ info, Id, Total, GetNewData }) => {
                 </div>
                 <div className="input_feilds">
                   {Pyment_type === "zaad" ? (
-                    <span className="Ll">{telesom}</span>
+                    <span className="Ll">{CodeType}</span>
                   ) : Pyment_type === "edahab" ? (
-                    <span className="Ll">{Somtel}</span>
+                    <span className="Ll">{CodeType}</span>
                   ) : Pyment_type === "Evc" ? (
-                    <span className="Ll">{Evc}</span>
+                    <span className="Ll">{CodeType}</span>
+                  ) : Pyment_type === "Sahal" ? (
+                    <span className="Ll">{CodeType}</span>
                   ) : (
                     <span className="Ll">No</span>
                   )}

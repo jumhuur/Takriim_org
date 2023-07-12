@@ -52,7 +52,7 @@ async function Topinfo({ info }) {
                         <div class="sk-circle11 sk-child"></div>
                         <div class="sk-circle12 sk-child"></div>
                       </div>{" "}
-                      Fadlan wax yar sug ...
+                      <span>Fadlan wax yar sug ...</span>
                     </p>
                   </div>
                 </div>
