@@ -10,6 +10,10 @@ import Done from "@/components/Done";
 import { useEffect, useReducer, useState } from "react";
 import { INITIAL_SATATE, lastTabaruc, ACTIONS } from "@/Radiuse/Radiuses";
 import Loading from "@/components/loading";
+// export const metadata = {
+//   title: "Taysiir | Mashruuc",
+//   description: "Taysiir | Shabakada Ururinta Tabarucaadka",
+// };
 // async function getData(Id) {
 //   const res = await fetch(`https://tabaruc.vercel.app/api/projects/${Id}`, {
 //     cache: "no-store",
@@ -48,6 +52,9 @@ function MainPage({ params }) {
   const [info, setinfo] = useState(null);
   const [lastTotal, setlastTotal] = useState(null);
   const [total, settotal] = useState(null);
+  const [tabaruc, settabaruc] = useState(null);
+  const [TopDonote, setTopDonote] = useState(null);
+  const [Count, setCount] = useState(null);
   const { Id } = params;
   const GetProjectDetails = async () => {
     const ProjectInfo = await fetch(`/api/projects/${Id}`, {
@@ -60,28 +67,37 @@ function MainPage({ params }) {
       cache: "no-store",
     });
 
+    const tabarucyo = await fetch(`/api/Tabaruc/proTabarucyo/${Id}`, {
+      cache: "no-store",
+    });
+
+    const response1 = await tabarucyo.json();
+
+    const TopDonotes = await fetch(`/api/Tabaruc/countproject/${Id}`, {
+      cache: "no-store",
+    });
+
+    const response2 = await TopDonotes.json();
+
+    const Totals = await fetch(`/api/Tabaruc/top/${Id}`, {
+      cache: "no-store",
+    });
+
+    const response3 = await Totals.json();
+
     const res3 = await Total.json();
     if (ProjectInfo.ok) {
       dispatch({
         type: ACTIONS.GET_DATA,
         Project: res1,
         Total: res3,
+        Tabarucyo: response1,
+        Count: response2,
+        Top: response3,
       });
     }
   };
-  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  // const { data, error, isLoading } = useSWR(
-  //   `http://localhost:3000/api/projects/${Id}`,
-  //   fetcher
-  // );
-  // const info = await getData(Id);
-  // const lastTotal = await GetTotal(Id);
   const Total = total && total.length > 0 ? total[0].Total : 0;
-
-  // const GetNewData = async () => {
-  //   await getData(Id);
-  // };
-
   useEffect(() => {
     GetProjectDetails();
   }, []);
@@ -89,6 +105,9 @@ function MainPage({ params }) {
   useEffect(() => {
     setinfo(state.Project);
     settotal(state.Total);
+    settabaruc(state && state.Tabarucyo);
+    setTopDonote(state && state.Top);
+    setCount(state && state.Count);
   }, [state]);
   return (
     <>
@@ -170,7 +189,11 @@ function MainPage({ params }) {
                     />
                   )}
                 </div>
-                {/* <LastTabaruc Id={Id} /> */}
+                <LastTabaruc
+                  Count={Count}
+                  tabaruc={tabaruc}
+                  TopDonote={TopDonote}
+                />
               </div>
             </div>
           </div>

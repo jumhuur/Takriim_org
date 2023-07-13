@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Lottie from "lottie-react";
+import animationData from "../../public/Images/nodata1.json";
 function EmpatyTabaruc() {
   return (
     <div className="empaty">
       <div className="sawir">
-        <Image fill={true} src="/Images/search1.svg" alt="empaty" />
-        {/* <Lottie animationData={animationData}  /> */}
+        {/* <Image fill={true} src="/Images/search1.svg" alt="empaty" /> */}
+        <Lottie animationData={animationData} />
       </div>
       <p className="not_foundmessage">Wali Laguma Tabarucin mashruucan</p>
       <br></br>

@@ -5,6 +5,9 @@ export const INITIAL_SATATE = {
   Project: null,
   LastTabaruc: null,
   Total: null,
+  Tabarucyo: null,
+  Count: null,
+  Top: null,
 };
 
 export const ACTIONS = {
@@ -19,6 +22,9 @@ export const lastTabaruc = (state, action) => {
         Data: action.payload,
         Project: action.Project,
         Total: action.Total,
+        Tabarucyo: action.Tabarucyo,
+        Count: action.Count,
+        Top: action.Top,
         Error: true,
       };
 

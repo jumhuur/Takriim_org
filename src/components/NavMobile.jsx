@@ -3,15 +3,11 @@ import { Auth } from "@/context/context";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-
+import Lottie from "lottie-react";
+import animationData from "../../public/images/Users.json";
 function MobileNav({ Login }) {
   const sesstion = useSession();
   const { User } = Auth();
-  const CrentUser = {
-    Magac: "maxamad",
-    Id: "6454dba1429d70970c9c0eff",
-    Lanbar: "4645195",
-  };
   return (
     <>
       <div className="Mobile">
@@ -57,11 +53,12 @@ function MobileNav({ Login }) {
                 <button className="nav-btn mb">
                   <span className="user_image">
                     <div className="image">
-                      <Image
+                      {/* <Image
                         src="/Images/User_line.png"
                         fill={true}
                         alt="sesstion.data.user.image"
-                      />
+                      /> */}
+                      <Lottie animationData={animationData} />
                     </div>
                   </span>
                   <span>{User.Magac}</span>

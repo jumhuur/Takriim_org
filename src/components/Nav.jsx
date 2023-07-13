@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import MobileNav from "./NavMobile";
 import { useSession } from "next-auth/react";
 import { Auth } from "@/context/context";
-// import Lottie from "lottie-react";
-// import animationData from "../../public/images/122224-profile-avatar-of-older-man.json";
+import Lottie from "lottie-react";
+import animationData from "../../public/images/Users.json";
 function Nav() {
   const { User } = Auth();
   const sesstion = useSession();
@@ -122,12 +122,12 @@ function Nav() {
                   <button className="nav-btn" onClick={Loginfunc}>
                     <span className="user_image">
                       <div className="image">
-                        <Image
+                        {/* <Image
                           src="/Images/User_line.png"
                           fill={true}
                           alt="sesstion.data.user.image"
-                        />
-                        {/* <Lottie animationData={animationData} /> */}
+                        /> */}
+                        <Lottie animationData={animationData} />
                       </div>
                     </span>
                     <span>{User.Magac}</span>
