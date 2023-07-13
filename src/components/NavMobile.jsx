@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import Lottie from "lottie-react";
-import animationData from "../../public/images/Users.json";
+import animationData from "../../public/Images/Users.json";
 function MobileNav({ Login }) {
   const sesstion = useSession();
   const { User } = Auth();
