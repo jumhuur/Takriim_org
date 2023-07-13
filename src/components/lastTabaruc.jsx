@@ -43,7 +43,8 @@ async function topDonote(Id) {
   }
   return response.json();
 }
-const LastTabaruc = async ({ Id }) => {
+const LastTabaruc = async ({ params }) => {
+  const { Id } = params;
   const tabaruc = await getTabaruc(Id);
   const TopDonote = await topDonote(Id);
   const Total = await GetCount(Id);

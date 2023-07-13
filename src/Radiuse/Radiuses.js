@@ -2,6 +2,9 @@ export const INITIAL_SATATE = {
   loading: false,
   Error: false,
   Data: null,
+  Project: null,
+  LastTabaruc: null,
+  Total: null,
 };
 
 export const ACTIONS = {
@@ -14,6 +17,8 @@ export const lastTabaruc = (state, action) => {
       return {
         loading: true,
         Data: action.payload,
+        Project: action.Project,
+        Total: action.Total,
         Error: true,
       };
 

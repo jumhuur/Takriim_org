@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 import animationData from "../../public/Images/104785-done";
 import animationData2 from "../../public/Images/103831-circle-x";
 import { Auth } from "@/context/context";
-const FromRaber = ({ info, Id, Total }) => {
+const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
   const { User, GetAll } = Auth();
   const sesstion = useSession();
   let CrentUser = "";
@@ -62,6 +62,9 @@ const FromRaber = ({ info, Id, Total }) => {
   // on change inputes
   const OnChangeInputes = (e) => {
     setfildes((perv) => ({ ...perv, [e.target.name]: e.target.value }));
+    if (fildes.Lanbar.startsWith("063")) {
+      console.log("qalad");
+    }
     setfildesTabaruc((perv) => ({ ...perv, [e.target.name]: e.target.value }));
   };
 
@@ -92,6 +95,7 @@ const FromRaber = ({ info, Id, Total }) => {
       if (AddTabaruc.ok) {
         UpdateAction();
         GetAll();
+        GetProjectDetails();
       }
       setLooding(false);
       return AddTabaruc;
