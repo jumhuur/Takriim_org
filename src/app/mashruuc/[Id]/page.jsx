@@ -50,11 +50,15 @@ function MainPage({ params }) {
   const [total, settotal] = useState(null);
   const { Id } = params;
   const GetProjectDetails = async () => {
-    const ProjectInfo = await fetch(`/api/projects/${Id}`);
+    const ProjectInfo = await fetch(`/api/projects/${Id}`, {
+      cache: "no-store",
+    });
 
     const res1 = await ProjectInfo.json();
 
-    const Total = await fetch(`/api/Tabaruc/getTotal/${Id}`);
+    const Total = await fetch(`/api/Tabaruc/getTotal/${Id}`, {
+      cache: "no-store",
+    });
 
     const res3 = await Total.json();
     if (ProjectInfo.ok) {
