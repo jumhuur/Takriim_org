@@ -6,7 +6,7 @@ import MobileNav from "./NavMobile";
 import { useSession } from "next-auth/react";
 import { Auth } from "@/context/context";
 import Lottie from "lottie-react";
-import animationData from "../../public/images/Users.json";
+import animationData from "../../public/Images/Users.json";
 function Nav() {
   const { User } = Auth();
   const sesstion = useSession();
