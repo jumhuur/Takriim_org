@@ -1,8 +1,8 @@
 "use cleint";
 import EmpatyTabaruc from "./EmpatyTabaruc";
 import { format } from "timeago.js";
-// import Lottie from "lottie-react";
-// import animationData from "../../public/Images/123026-celebrations-begin.json";
+import Lottie from "lottie-react";
+import animationData from "../../public/Images/Top.json";
 // async function getTabaruc(Id) {
 //   const res1 = await fetch(
 //     `https://tabaruc.vercel.app/api/Tabaruc/proTabarucyo/${Id}`,
@@ -76,6 +76,9 @@ const LastTabaruc = ({ tabaruc, TopDonote, Count }) => {
                           {format(tab.createdAt)}
                         </p>
                       </div>
+                    </div>
+                    <div className="Icon">
+                      <Lottie animationData={animationData} />
                     </div>
                   </div>
                 ))}

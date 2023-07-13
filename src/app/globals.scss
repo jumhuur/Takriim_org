@@ -1780,6 +1780,17 @@ div.laba_qaybood {
           @include dynamic-flex(flex-start, center, row, 10px);
           border-left: 2px solid $main-color2;
           border-right: 0px solid $main-color2;
+          position: relative;
+
+          div.Icon {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            // background-color: $main-color2;
+            border-radius: 50%;
+          }
 
           div.user_img {
             flex: 1;
