@@ -55,6 +55,7 @@ function MainPage({ params }) {
   const [tabaruc, settabaruc] = useState(null);
   const [TopDonote, setTopDonote] = useState(null);
   const [Count, setCount] = useState(null);
+  const [loading, setloading] = useState(false);
   const { Id } = params;
   const GetProjectDetails = async () => {
     const ProjectInfo = await fetch(`/api/projects/${Id}`, {
@@ -103,6 +104,7 @@ function MainPage({ params }) {
   }, []);
 
   useEffect(() => {
+    setloading(state.loading);
     setinfo(state.Project);
     settotal(state.Total);
     settabaruc(state && state.Tabarucyo);
@@ -115,7 +117,7 @@ function MainPage({ params }) {
       {info && !info?.Active && <Comming />}
       <Topinfo info={info} />
       <Provider>
-        {info ? (
+        {loading ? (
           <div className="Info">
             <div className="haye">
               <div className="laba_qaybood">

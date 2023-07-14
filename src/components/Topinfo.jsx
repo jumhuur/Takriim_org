@@ -1,5 +1,5 @@
 import { format } from "timeago.js";
-async function Topinfo({ info }) {
+function Topinfo({ info }) {
   return (
     <>
       {info ? (

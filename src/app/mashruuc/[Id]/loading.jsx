@@ -5,7 +5,6 @@ function Loading() {
     <>
       <Topinfo />
       <ProInfoSkl />
-      <ProInfoSkl />
     </>
   );
 }
