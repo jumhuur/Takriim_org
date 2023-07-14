@@ -23,7 +23,11 @@ export const POST = async (request) => {
     }
 
     if (Lanbar.length < 7 || Lanbar.length > 7) {
-      throw Error("Lanbarku Ha Noqdo 7 Lanbar Kaliya");
+      throw Error("Lanbarku Ha Noqdo 7 Lanbar");
+    }
+
+    if (Magac.length > 15) {
+      throw Error("Fadlan Magaca Soo Koob");
     }
     await User.save();
     const Token = CreateToken(User._id);
