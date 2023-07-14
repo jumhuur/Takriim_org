@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Lottie from "lottie-react";
-// import animationData from "../../public/images/70897-online-payments.json";
+import animationData from "../../public/Images/Welcome1.json";
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
 import { Auth } from "@/context/context";
@@ -84,8 +84,8 @@ function Welcome() {
             </div>
           </div>
           <div className="qayb sawir">
-            {/* <Lottie animationData={animationData} /> */}
-            <Image fill={true} src="/Images/Home_01.svg" alt="homepage_ills" />
+            <Lottie animationData={animationData} />
+            {/* <Image fill={true} src="/Images/Home_01.svg" alt="homepage_ills" /> */}
           </div>
         </div>
       </div>
