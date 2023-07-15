@@ -39,12 +39,16 @@ import Loading from "@/components/loading";
 
 // export async function generateMetadata({ params }) {
 //   const mashruuc = await getData(params.Id);
+//   console.log(params);
 //   return {
 //     title: `Taysiir | ${mashruuc.Name}`,
 //     description: mashruuc.Macluumaad,
 //   };
 // }
-
+// export const metadata = {
+//   title: "Taysiir | Mashruuc Furan",
+//   description: "Taysiir | Shabakada Ururinta Tabarucaadka",
+// };
 function MainPage({ params }) {
   // const { state } = Auth();
   const [state, dispatch] = useReducer(lastTabaruc, INITIAL_SATATE);
@@ -110,6 +114,7 @@ function MainPage({ params }) {
     settabaruc(state && state.Tabarucyo);
     setTopDonote(state && state.Top);
     setCount(state && state.Count);
+    // document.title = `Taysiir | ${info && info.Name}`;
   }, [state]);
   return (
     <>
