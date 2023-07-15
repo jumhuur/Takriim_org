@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { Auth } from "@/context/context";
+import Lottie from "lottie-react";
+import animationData from "../../../public/Images/Welcome1.json";
 
 function Register() {
   const route = useRouter();
@@ -79,7 +81,8 @@ function Register() {
           <div className="inhaye">
             <div className="login">
               <div className="llc bidix_login">
-                <Image fill={true} src="/Images/Home_01.svg" alt="Login_img" />
+                {/* <Image fill={true} src="/Images/Home_01.svg" alt="Login_img" /> */}
+                <Lottie animationData={animationData} />
               </div>
               <div className="llc midig_login">
                 <div className="close">
