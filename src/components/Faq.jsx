@@ -1,41 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 import { format } from "timeago.js";
-import useSWR from "swr";
+// import useSWR from "swr";
 import Skllast from "./Skeletons/Skllast";
 import { Auth } from "@/context/context";
-// const GetData = async () => {
-//   const res = await fetch(
-//     "https://tabaruc.vercel.app/api/Tabaruc/getAll/lastDone",
-//     {
-//       next: { revalidate: 10 },
-//     }
-//   );
-
-//   if (!res.ok) {
-//     throw new Error("not found data");
-//   }
-
-//   return res.json();
-// };
-
 function Fqa() {
   const [last, setlast] = useState(null);
   const { state } = Auth();
-  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  // const {
-  //   data: lasnone,
-  //   mutate,
-  //   error,
-  //   isLoading,
-  // } = useSWR(`/api/Tabaruc/getAll/lastDone`, fetcher);
-
   useEffect(() => {
-    //mutate();
     setlast(state && state.Data);
   }, [state]);
 
-  // const lasnone = await GetData();
   return (
     <>
       <div className="faq">

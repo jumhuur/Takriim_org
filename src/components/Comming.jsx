@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+// import Lottie from "lottie-react";
+// import animationData from "../../public/Images/nostarted1.json";
+
 const Comming = () => {
   return (
     <div className={"over active"}>

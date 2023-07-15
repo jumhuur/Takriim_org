@@ -8,7 +8,7 @@ import Alert from "./Alert";
 import { useSession } from "next-auth/react";
 import animationData from "../../public/Images/104785-done";
 import animationData2 from "../../public/Images/103831-circle-x";
-import { Auth } from "@/context/context";
+import { state, Auth } from "@/context/context";
 const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
   const { User, GetAll } = Auth();
   const sesstion = useSession();
