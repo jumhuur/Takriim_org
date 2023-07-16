@@ -102,6 +102,7 @@ function Register() {
                       placeholder="Magacaaga"
                       autoComplete="off"
                       name="Magac"
+                      required
                     />
                     <input
                       onChange={onchange_inputes}
@@ -109,6 +110,7 @@ function Register() {
                       placeholder="Lanbaraakaga"
                       autoComplete="off"
                       name="Lanbar"
+                      required
                     />
                     <input
                       onChange={onchange_inputes}
@@ -116,6 +118,7 @@ function Register() {
                       placeholder="Passwor-kaaga"
                       autoComplete="off"
                       name="Password"
+                      required
                     />
                     <input
                       onChange={onchange_inputes}
