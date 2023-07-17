@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { Auth } from "@/context/context";
 import Lottie from "lottie-react";
-import animationData from "../../../public/Images/Welcome1.json";
+import animationData from "../../../public/Images/Welcome.json";
 
 function Register() {
   const route = useRouter();

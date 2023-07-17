@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Lottie from "lottie-react";
-import animationData from "../../../public/Images/130776-create-account.json";
+import animationData from "../../../public/Images/Welcome.json";
 import { Auth } from "@/context/context";
 function Login() {
   const { SetUser, User } = Auth();
