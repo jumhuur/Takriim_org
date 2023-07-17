@@ -53,12 +53,12 @@ function MobileNav({ Login }) {
                 <button className="nav-btn mb">
                   <span className="user_image">
                     <div className="image">
-                      {/* <Image
-                        src="/Images/User_line.png"
+                      <Image
+                        src="/Images/User_line2.png"
                         fill={true}
                         alt="sesstion.data.user.image"
-                      /> */}
-                      <Lottie animationData={animationData} />
+                      />
+                      {/* <Lottie animationData={animationData} /> */}
                     </div>
                   </span>
                   <span>{User.Magac}</span>
