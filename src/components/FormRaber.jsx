@@ -371,7 +371,10 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
                       </span>
                     </Link>
                   </button>
-                ) : User && User.Lanbar === "4645195" ? (
+                ) : (User && User.Lanbar === "4645195") ||
+                  (User && User.Lanbar === "4462174") ||
+                  (User && User.Lanbar === "4115346") ||
+                  (User && User.Lanbar === "9090098") ? (
                   <button className="bixi manually">
                     <Link href={`/manually/${info && info._id}`}>
                       <span>

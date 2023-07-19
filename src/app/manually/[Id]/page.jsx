@@ -14,21 +14,21 @@ import { useRouter } from "next/navigation";
 function Menually({ params }) {
   const { User } = Auth();
   const Router = useRouter();
+  // const Admins = ["4645195", "4462174", "4115346", "9090098"];
   const salaxiyaat = () => {
-    if (User) {
-      if (!User.lanbar === "4645195" || "4462174" || "4115346" || "9090098") {
-        Router.push("/");
-      }
+    if (
+      (User && User.Lanbar === "4645195") ||
+      (User && User.Lanbar === "4462174") ||
+      (User && User.Lanbar === "4115346") ||
+      (User && User.Lanbar === "9090098")
+    ) {
+      console.log("sax");
+    } else {
       Router.push("/");
     }
   };
 
   salaxiyaat();
-  // const { Id } = params;
-  // const info = await getData(Id);
-  // const lastTotal = await GetTotal(Id);
-  // const Total = lastTotal.length > 0 ? lastTotal[0].Total : 0;
-
   const [state, dispatch] = useReducer(lastTabaruc, INITIAL_SATATE);
   // states
   const [info, setinfo] = useState(null);
