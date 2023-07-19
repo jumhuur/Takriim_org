@@ -8,16 +8,19 @@ import Alert from "./Alert";
 import { useSession } from "next-auth/react";
 import animationData from "../../public/Images/104785-done";
 import animationData2 from "../../public/Images/103831-circle-x";
-const MenuallyFrom = ({ info, Id, Total }) => {
+import { Auth } from "@/context/context";
+const MenuallyFrom = ({ info, Id, Total, GetProjectDetails }) => {
+  const { GetAll, User } = Auth();
   const sesstion = useSession();
   const CrentUser =
     sesstion.status === "authenticated" ? sesstion.data.user : "";
-  const UserLanbar = CrentUser && "";
+  const UserLanbar = User ? User.Lanbar : "";
   const Tabaruce = CrentUser ? CrentUser.email : "Ixsan2023";
   //   const Name = CrentUser ? CrentUser.name : "Deeq Bixiye";
   const [Pyment_type, setPyment_type] = useState("zaad");
   const [Looding, setLooding] = useState(false);
   const [wait, setwait] = useState(false);
+  const [CodeType, setCodeType] = useState("63");
   // const [total, settotal] = useState(0);
   const [tabaruc, settabaruc] = useState(null);
   const [msg, setmsg] = useState("");
@@ -41,10 +44,10 @@ const MenuallyFrom = ({ info, Id, Total }) => {
 
   const Somtel = "65";
   const telesom = "63";
-  const Evc = "252";
-  const pattern = /[^0-9]/g;
-  const LacagReg = /[^0-9.]/g;
-
+  const Evc = "61";
+  const Sahal = "90";
+  // const pattern = /[^0-9]/g;
+  // const LacagReg = /[^0-9.]/g;
   // on change inputes
   const OnChangeInputes = (e) => {
     setfildes((perv) => ({ ...perv, [e.target.name]: e.target.value }));
@@ -78,6 +81,8 @@ const MenuallyFrom = ({ info, Id, Total }) => {
       if (AddTabaruc.ok) {
         UpdateAction();
         //setLooding(false);
+        GetAll();
+        GetProjectDetails();
         FromRset.current.reset();
       }
       setLooding(false);
@@ -98,12 +103,19 @@ const MenuallyFrom = ({ info, Id, Total }) => {
 
   const toggale_zaad = (e) => {
     setPyment_type("zaad");
+    setCodeType(telesom);
   };
   const toggale_edahab = (e) => {
     setPyment_type("edahab");
+    setCodeType(Somtel);
   };
   const toggale_Evc = (e) => {
     setPyment_type("Evc");
+    setCodeType(Evc);
+  };
+  const toggale_Sahal = (e) => {
+    setPyment_type("Sahal");
+    setCodeType(Sahal);
   };
   return (
     <>
@@ -120,8 +132,9 @@ const MenuallyFrom = ({ info, Id, Total }) => {
                     <label
                       onClick={toggale_zaad}
                       className={
-                        Pyment_type === "zaad" ? "zaad active" : "zaad"
+                        Pyment_type === "zaad" ? "zaad active" : "zaad Type"
                       }
+                      id="Type"
                     >
                       <span>
                         <i className="fa-solid fa-circle-check"></i> Zaad
@@ -130,8 +143,11 @@ const MenuallyFrom = ({ info, Id, Total }) => {
                     <label
                       onClick={toggale_edahab}
                       className={
-                        Pyment_type === "edahab" ? "edahab active" : "edahab"
+                        Pyment_type === "edahab"
+                          ? "edahab active"
+                          : "edahab Type"
                       }
+                      id="Type"
                     >
                       <span>
                         <i className="fa-solid fa-circle-check"></i> edahab
@@ -139,10 +155,23 @@ const MenuallyFrom = ({ info, Id, Total }) => {
                     </label>
                     <label
                       onClick={toggale_Evc}
-                      className={Pyment_type === "Evc" ? "Evc active" : "Evc"}
+                      className={
+                        Pyment_type === "Evc" ? "Evc active" : "Evc Type"
+                      }
                     >
                       <span>
                         <i className="fa-solid fa-circle-check"></i> Evc
+                      </span>
+                    </label>
+                    <label
+                      onClick={toggale_Sahal}
+                      className={
+                        Pyment_type === "Sahal" ? "Sahal active" : "Sahal Type"
+                      }
+                      id="Type"
+                    >
+                      <span>
+                        <i className="fa-solid fa-circle-check"></i> Sahal
                       </span>
                     </label>
                     <input type="checkbox" name="payment" value={Pyment_type} />
@@ -186,6 +215,8 @@ const MenuallyFrom = ({ info, Id, Total }) => {
                     <span className="Ll">{Somtel}</span>
                   ) : Pyment_type === "Evc" ? (
                     <span className="Ll">{Evc}</span>
+                  ) : Pyment_type === "Sahal" ? (
+                    <span className="Ll">{Sahal}</span>
                   ) : (
                     <span className="Ll">No</span>
                   )}
