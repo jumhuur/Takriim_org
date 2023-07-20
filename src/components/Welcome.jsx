@@ -84,8 +84,8 @@ function Welcome() {
             </div>
           </div>
           <div className="qayb sawir">
-            <Lottie animationData={animationData} />
-            {/* <Image fill={true} src="/Images/Home_01.svg" alt="homepage_ills" /> */}
+            {/* <Lottie animationData={animationData} /> */}
+            <Image fill={true} src="/Images/Home_01.svg" alt="homepage_ills" />
           </div>
         </div>
       </div>
