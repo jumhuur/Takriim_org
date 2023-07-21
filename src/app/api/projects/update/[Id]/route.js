@@ -17,6 +17,8 @@ export const PATCH = async (request, { params }) => {
     await res.save();
     return new NextResponse(JSON.stringify(res), { status: 200 });
   } catch (Err) {
-    return new NextResponse(Err.message, { status: 500 });
+    return new NextResponse(JSON.stringify({ Error: Err.message }), {
+      status: 500,
+    });
   }
 };

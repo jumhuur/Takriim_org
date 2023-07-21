@@ -1742,6 +1742,7 @@ div.laba_qaybood {
   div.qayb {
     height: 100%;
     padding: 15px 0px;
+    width: 100%;
 
     i {
       color: $main-color2;
@@ -1910,7 +1911,7 @@ div.laba_qaybood {
 
       // last donet here is kaan
       div.progress {
-        width: 80%;
+        width: 90%;
         height: 15px;
         background-color: $prog_color;
         margin: 15px 0px;
@@ -2050,7 +2051,11 @@ div.laba_qaybood {
             div.donter_info {
               width: 100%;
               @include dynamic-flex(center, flex-start, column, 0px);
-
+              p.Error {
+                @include qoraal-p(18px, $colose_color);
+                color: $colose_color;
+                margin: 10px 0px;
+              }
               div.input_feilds {
                 width: 100%;
                 position: relative;

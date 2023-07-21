@@ -32,6 +32,7 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
   const [CodeType, setCodeType] = useState("63");
   const [Looding, setLooding] = useState(false);
   const [wait, setwait] = useState(false);
+  const [Error, setError] = useState(false);
   // const [total, settotal] = useState(0);
   const [tabaruc, settabaruc] = useState(null);
   const [msg, setmsg] = useState("");
@@ -63,9 +64,11 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
   const OnChangeInputes = (e) => {
     setfildes((perv) => ({ ...perv, [e.target.name]: e.target.value }));
     if (fildes.Lanbar.startsWith("063")) {
-      console.log("qalad");
+    }
+    if (fildes.Lacagta <= 0) {
     }
     setfildesTabaruc((perv) => ({ ...perv, [e.target.name]: e.target.value }));
+    setError(false);
   };
 
   // real time data  isticmaal swr next recomm
@@ -92,15 +95,26 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
           "Content-Type": "application/json",
         },
       });
+
       if (AddTabaruc.ok) {
         UpdateAction();
         GetAll();
         GetProjectDetails();
       }
+
+      if (!AddTabaruc.ok) {
+        const Json = await AddTabaruc.json();
+        setError(Json.Error);
+        setmsg("Lacagtu Kama Yaraan Karto 1$");
+        setimg(animationData2);
+        setcln("Qalad");
+        setwait(0);
+        setLooding(false);
+      }
       setLooding(false);
       return AddTabaruc;
     } catch (Err) {
-      console.log(Err);
+      //setError(Json);
     }
   };
 
@@ -109,6 +123,7 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
     setmsg("Fadlan Telefankaaga Eeg");
     setwait(true);
     setLooding(true);
+
     if (
       Pyment_type === "zaad" ||
       Pyment_type === "Evc" ||
@@ -261,7 +276,7 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
                   </span>
                   <input
                     onChange={OnChangeInputes}
-                    className={"errr"}
+                    className={Error && "err"}
                     type="number"
                     placeholder="Lacagta"
                     name="Lacagta"
@@ -340,6 +355,7 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
                     </>
                   )}
                 </div>
+                {Error && <p className="Error">{Error}</p>}
                 {!Looding ? (
                   <button className={"bixi"}>
                     <i className="fa-solid fa-paper-plane"></i> Bixi Hada
