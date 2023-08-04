@@ -98,8 +98,8 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
 
       if (AddTabaruc.ok) {
         UpdateAction();
-        GetAll();
         GetProjectDetails();
+        GetAll();
       }
 
       if (!AddTabaruc.ok) {

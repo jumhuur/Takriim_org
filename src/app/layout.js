@@ -10,6 +10,7 @@ const inter = Roboto({ subsets: ["latin"], weight: ["400"] });
 export const metadata = {
   title: "Taysiir | Shabakada Ururinta Tabarucaadka",
   description: "Taysiir | Shabakada Ururinta Tabarucaadka",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }) {

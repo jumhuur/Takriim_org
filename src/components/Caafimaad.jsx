@@ -7,17 +7,6 @@ import ProjectSkl from "./Skeletons/ProjectSkeleton";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-// async function getData() {
-//   const res = await fetch("http://localhost:3000/api/projects/getall", {
-//     cache: "no-store",
-//   });
-
-//   if (!res.ok) {
-//     throw new Error("Wax macluumaada lama hellin !");
-//   }
-
-//   return res.json();
-// }
 const Caafimaad = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, isLoading } = useSWR(`/api/projects/getall`, fetcher);
