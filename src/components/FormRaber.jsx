@@ -9,8 +9,8 @@ import { useSession } from "next-auth/react";
 import animationData from "../../public/Images/104785-done";
 import animationData2 from "../../public/Images/103831-circle-x";
 import { state, Auth } from "@/context/context";
-const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
-  const { User, GetAll } = Auth();
+const FromRaber = ({ info, Id, Total, GetProjectDetails, ss }) => {
+  const { User, GetAll, state } = Auth();
   const sesstion = useSession();
   let CrentUser = "";
   let Tabaruce = !CrentUser && "Ixsan2023";
@@ -100,6 +100,7 @@ const FromRaber = ({ info, Id, Total, GetProjectDetails }) => {
         UpdateAction();
         GetProjectDetails();
         GetAll();
+        console.log(state);
       }
 
       if (!AddTabaruc.ok) {

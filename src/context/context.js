@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useEffect, useReducer } from "react";
 import { useState } from "react";
-import { lastTabaruc, ACTIONS, INITIAL_SATATE } from "@/Radiuse/Radiuses";
+import { AllHome, ACTIONS, INITIAL_SATATE } from "@/Radiuse/RadiuseHome";
 const AuthContext = React.createContext();
 export const Auth = () => {
   return useContext(AuthContext);
@@ -10,7 +10,7 @@ export const Auth = () => {
 export const ContextProvider = ({ children }) => {
   // states
   const [User, setUser] = useState(null);
-  const [state, dispatch] = useReducer(lastTabaruc, INITIAL_SATATE);
+  const [state, dispatch] = useReducer(AllHome, INITIAL_SATATE);
   //readiuse
 
   // functions
