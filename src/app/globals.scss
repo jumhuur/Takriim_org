@@ -1361,7 +1361,7 @@ div.over {
           position: absolute;
         }
         h2.comm {
-          @include Totile-H(1.3rem, $main-color2);
+          @include Totile-H(1.1rem, $main-color2);
           padding: 15px;
           text-align: center;
           &.done {
