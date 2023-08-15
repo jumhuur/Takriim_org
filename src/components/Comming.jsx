@@ -12,7 +12,7 @@ const Comming = () => {
             <div className="llc bidix_login comm">
               <Image fill={true} src="/Images/comm.svg" alt="Login_img" />
               {/* <Lottie animationData={animationData} /> */}
-              <h2 className="comm">Mashruucan Wali Lama Bilaabin</h2>
+              <h2 className="comm">Waan Ka Xunahay ! Mashruucan Ma furan</h2>
               <Link href="/">
                 <button className="comm">
                   <i className="fa-solid fa-arrow-left"></i> Ku Noqo Xagii Hore
