@@ -76,7 +76,7 @@ function Welcome() {
             )}
             <div className="btn-welc">
               {sesstion.status === "authenticated" ? (
-                <motion.button
+                <button
                   className="samayso"
                   onClick={Logout}
                   initial={{ y: "2rem", opacity: 0 }}
@@ -85,9 +85,9 @@ function Welcome() {
                 >
                   <i className="fa-solid fa-right-from-bracket"></i> Xidho
                   Akoonka
-                </motion.button>
+                </button>
               ) : User ? (
-                <motion.button
+                <button
                   className="samayso"
                   onClick={fromLogout}
                   initial={{ y: "2rem", opacity: 0 }}
@@ -96,9 +96,9 @@ function Welcome() {
                 >
                   <i className="fa-solid fa-right-from-bracket"></i> Xidho
                   Akoonka
-                </motion.button>
+                </button>
               ) : (
-                <motion.button
+                <button
                   className="samayso"
                   initial={{ y: "2rem", opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -109,10 +109,10 @@ function Welcome() {
                       Samayso Akoon <i className="fa-solid fa-arrow-right"></i>
                     </span>
                   </Link>
-                </motion.button>
+                </button>
               )}
 
-              <motion.button
+              <button
                 className="Xaqiijin"
                 disabled
                 initial={{ y: "2rem", opacity: 0 }}
@@ -120,13 +120,18 @@ function Welcome() {
                 transition={{ duration: 2, type: "spring" }}
               >
                 <i className="fa-solid fa-circle-check"></i> Xaqiiji Tabaruc
-              </motion.button>
+              </button>
             </div>
           </div>
-          <div className="qayb sawir">
+          <motion.div
+            className="qayb sawir"
+            initial={{ y: "2rem", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 2, type: "just" }}
+          >
             <Lottie animationData={animationData} />
             {/* <Image fill={true} src="/Images/Home_01.svg" alt="homepage_ills" /> */}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
