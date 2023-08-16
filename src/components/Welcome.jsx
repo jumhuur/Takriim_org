@@ -74,7 +74,12 @@ function Welcome() {
                 </motion.p>
               </>
             )}
-            <div className="btn-welc">
+            <motion.div
+              className="btn-welc"
+              initial={{ y: "2rem", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 2, type: "just" }}
+            >
               {sesstion.status === "authenticated" ? (
                 <button
                   className="samayso"
@@ -121,7 +126,7 @@ function Welcome() {
               >
                 <i className="fa-solid fa-circle-check"></i> Xaqiiji Tabaruc
               </button>
-            </div>
+            </motion.div>
           </div>
           <motion.div
             className="qayb sawir"
