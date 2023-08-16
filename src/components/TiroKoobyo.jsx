@@ -40,6 +40,7 @@
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import Tirakoob_skl from "./Skeletons/Tirakoob";
+import CountUp from "react-countup";
 function TiroKoobyo() {
   const [Count, setCount] = useState(null);
   const [TotalTabaruc, setTotalTabaruc] = useState(null);
@@ -106,7 +107,8 @@ function TiroKoobyo() {
             {TotalTabaruc ? (
               <div className="qoraal">
                 <h2>
-                  <i className="fa-solid fa-sack-dollar"></i> {TotalTabaruc}{" "}
+                  <i className="fa-solid fa-sack-dollar"></i>{" "}
+                  <CountUp end={TotalTabaruc} />
                   <span className="Tirokoob_titels">$ Dollar</span>
                 </h2>
                 <p>
@@ -144,7 +146,7 @@ function TiroKoobyo() {
               <div className="qoraal">
                 <h2>
                   <i className="fa-solid fa-hand-holding-heart"></i>{" "}
-                  {countTabaruc}{" "}
+                  <CountUp end={countTabaruc} />
                   <span className="Tirokoob_titels">Deeq Bixiye</span>
                 </h2>
                 <p>
@@ -186,8 +188,8 @@ function TiroKoobyo() {
             {Count ? (
               <div className="qoraal">
                 <h2>
-                  <i className="fa-solid fa-users"></i> {Count}{" "}
-                  <span className="Tirokoob_titels">Isticmaale</span>
+                  <i className="fa-solid fa-users"></i> <CountUp end={Count} />
+                  <span className="Tirokoob_titels"> Isticmaale</span>
                 </h2>
                 <p>
                   isticmaalayaasha shabakada Taysiir si rasmiya akoon ugu leh
