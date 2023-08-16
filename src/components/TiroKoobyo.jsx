@@ -147,7 +147,7 @@ function TiroKoobyo() {
                 <h2>
                   <i className="fa-solid fa-hand-holding-heart"></i>{" "}
                   <CountUp end={countTabaruc} />
-                  <span className="Tirokoob_titels">Deeq Bixiye</span>
+                  <span className="Tirokoob_titels"> Deeq Bixiye</span>
                 </h2>
                 <p>
                   Tirada guud ee dadka Tabarucyadooda ku bixiyay shabakada
