@@ -146,7 +146,7 @@ function TiroKoobyo() {
               <div className="qoraal">
                 <h2>
                   <i className="fa-solid fa-hand-holding-heart"></i>{" "}
-                  <CountUp end={countTabaruc} />
+                  <CountUp end={countTabaruc} decimals={2} decimal="." />
                   <span className="Tirokoob_titels"> Deeq Bixiye</span>
                 </h2>
                 <p>
