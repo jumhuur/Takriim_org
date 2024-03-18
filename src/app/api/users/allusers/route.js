@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import conectdb from "@/utils/db";
 import { isticmaale } from "@/models/Users";
+export const dynamic = "force-dynamic";
 export const GET = async (Request) => {
   // fetch
   try {

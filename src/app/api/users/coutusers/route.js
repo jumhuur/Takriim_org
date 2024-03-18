@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { isticmaale } from "@/models/Users";
 import conectdb from "@/utils/db";
-
+export const dynamic = "force-dynamic";
 export const GET = async (Request) => {
   try {
     await conectdb();
