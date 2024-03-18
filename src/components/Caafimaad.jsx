@@ -11,7 +11,6 @@ const Caafimaad = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, isLoading } = useSWR(`/api/projects/getall`, fetcher);
   //const data = await getData();
-
   useEffect(() => {
     mutate();
   }, [mutate]);

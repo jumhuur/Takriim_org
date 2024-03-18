@@ -5,6 +5,7 @@ import Projects from "@/components/Peojects";
 import TiroKoobyo from "@/components/TiroKoobyo";
 import Welcome from "@/components/Welcome";
 import Marketing from "@/components/Marketing";
+import SlideCompany from "@/components/Slidecompans";
 export default function Home() {
   return (
     <main>

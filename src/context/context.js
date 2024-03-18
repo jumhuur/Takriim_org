@@ -17,7 +17,9 @@ export const ContextProvider = ({ children }) => {
   const GetAll = async () => {
     // last tabaruc
     const LTabaruc = await fetch("/api/Tabaruc/getAll/lastDone", {
-      cache: "no-store",
+      next: {
+        revalidate: 30,
+      },
     });
     const LasttabarucRes = await LTabaruc.json();
     if (LTabaruc.ok) {
