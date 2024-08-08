@@ -88,9 +88,9 @@ function Fqa() {
               </div>
               {last ? (
                 <button className="start_btn_faq">
-                  <i class="fa-solid fa-wallet"></i> {last[0].Lacagta} ${" "}
+                  <i class="fa-solid fa-wallet"></i> {last[0]?.Lacagta} ${" "}
                   <i class="fa-regular fa-clock"></i>{" "}
-                  {format(last[0].createdAt)}
+                  {format(last[0]?.createdAt)}
                 </button>
               ) : (
                 <Skllast />
