@@ -49,7 +49,8 @@ ProjectsSchema.statics.Addpro = async function (
   Tabaruc,
   Qayb,
   Sawir,
-  Muuqaal
+  Muuqaal,
+  Active
 ) {
   const Project = await this.create({
     Name,
@@ -59,6 +60,7 @@ ProjectsSchema.statics.Addpro = async function (
     Qayb,
     Sawir,
     Muuqaal,
+    Active,
   });
   return Project;
 };

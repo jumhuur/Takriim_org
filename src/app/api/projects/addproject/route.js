@@ -3,7 +3,7 @@ import conectdb from "@/utils/db";
 import { Project } from "@/models/Projects";
 
 export const POST = async (request) => {
-  const { Name, Hadaf, Macluumaad, Tabaruc, Qayb, Sawir, Muuqaal } =
+  const { Name, Hadaf, Macluumaad, Tabaruc, Qayb, Sawir, Muuqaal, Active } =
     await request.json();
   await conectdb();
   const newProject = new Project({
@@ -14,6 +14,7 @@ export const POST = async (request) => {
     Qayb,
     Sawir,
     Muuqaal,
+    Active,
   });
   try {
     await newProject.save();
